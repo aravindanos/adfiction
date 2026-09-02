@@ -1,0 +1,1475 @@
+/* =====================================================
+   FIXED BACK TO HOME
+===================================================== */
+
+.about-back-home {
+  position: fixed;
+  top: 110px;
+  right: 40px;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 11px 17px 11px 11px;
+
+  color: #fff;
+  text-decoration: none;
+
+  background: rgba(10, 10, 10, 0.75);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transform: perspective(700px) rotateY(8deg);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Arrow box */
+
+.back-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: #111;
+
+  box-shadow:
+    4px 4px 0 #333,
+    7px 7px 0 rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.35s ease;
+}
+
+.back-icon svg {
+  font-size: 17px;
+}
+
+/* Text */
+
+.back-text {
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  white-space: nowrap;
+}
+
+/* Hover */
+
+.about-back-home:hover {
+  background: #1a1a1a;
+
+  border-color: rgba(255, 255, 255, 0.5);
+
+  transform:
+    perspective(700px)
+    rotateY(0deg)
+    translateX(5px);
+}
+
+.about-back-home:hover .back-icon {
+  transform: translateX(-3px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .about-back-home {
+    top: 90px;
+    right: 18px;
+
+    padding: 8px 12px 8px 8px;
+
+    gap: 9px;
+  }
+
+  .back-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .back-icon svg {
+    font-size: 15px;
+  }
+
+  .back-text {
+    font-size: 8px;
+    letter-spacing: 0.14em;
+  }
+
+}
+
+
+
+/* =====================================================
+   ADFICTION ABOUT PAGE
+   BLACK / WHITE / GREY
+   3D CINEMATIC DESIGN
+===================================================== */
+
+.about-page {
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  perspective: 1600px;
+}
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+.about-section-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: #666;
+
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.about-section-label span {
+  color: #aaa;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.about-hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 120px 7vw;
+
+  overflow: hidden;
+
+  perspective: 1500px;
+}
+
+.about-grid {
+  position: absolute;
+
+  inset: -30%;
+
+  background-image:
+    linear-gradient(#151515 1px, transparent 1px),
+    linear-gradient(90deg, #151515 1px, transparent 1px);
+
+  background-size: 80px 80px;
+
+  transform:
+    perspective(700px)
+    rotateX(65deg)
+    translateY(250px)
+    scale(1.5);
+
+  opacity: 0.3;
+
+  mask-image:
+    linear-gradient(
+      to top,
+      #000,
+      transparent 75%
+    );
+}
+
+.about-hero-content {
+  position: relative;
+
+  z-index: 3;
+
+  transform:
+    perspective(1000px)
+    translateZ(60px);
+}
+
+.about-eyebrow {
+  font-size: 10px;
+
+  letter-spacing: 5px;
+
+  color: #777;
+}
+
+.about-hero-title {
+  margin: 25px 0 0;
+
+  font-size: clamp(90px, 15vw, 240px);
+
+  line-height: 0.76;
+
+  letter-spacing: -12px;
+
+  font-weight: 900;
+
+  transform:
+    perspective(800px)
+    rotateX(7deg);
+
+  text-shadow:
+    2px 2px 0 #333,
+    4px 4px 0 #292929,
+    6px 6px 0 #202020,
+    10px 20px 50px rgba(0,0,0,.9);
+}
+
+.about-hero-title span {
+  display: block;
+
+  color: #777;
+
+  margin-left: 7vw;
+}
+
+.about-hero-subtitle {
+  margin-top: 50px;
+
+  color: #aaa;
+
+  font-size: 11px;
+
+  letter-spacing: 7px;
+}
+
+.about-hero-number {
+  position: absolute;
+
+  right: 7vw;
+  top: 50%;
+
+  color: #333;
+
+  font-size: 150px;
+
+  font-weight: 900;
+
+  transform:
+    translateY(-50%)
+    rotateY(-20deg);
+
+  z-index: 1;
+}
+
+.about-scroll {
+  position: absolute;
+
+  bottom: 40px;
+  left: 7vw;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: #555;
+
+  font-size: 8px;
+  letter-spacing: 3px;
+}
+
+.about-scroll div {
+  width: 70px;
+  height: 1px;
+
+  background: #333;
+}
+
+
+/* =====================================================
+   ORBITS
+===================================================== */
+
+.about-orbit {
+  position: absolute;
+
+  border: 1px solid #222;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 600px;
+  height: 600px;
+
+  right: -100px;
+  top: 15%;
+
+  transform:
+    rotateX(65deg)
+    rotateZ(20deg);
+}
+
+.orbit-two {
+  width: 430px;
+  height: 430px;
+
+  right: 10px;
+  top: 25%;
+
+  transform:
+    rotateX(65deg)
+    rotateZ(-30deg);
+
+  border-color: #151515;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.about-intro {
+  position: relative;
+
+  width: 86%;
+
+  margin: auto;
+
+  padding: 160px 0;
+
+  display: grid;
+
+  grid-template-columns: 0.7fr 2fr;
+
+  gap: 100px;
+
+  border-top: 1px solid #151515;
+}
+
+.about-intro-content h2 {
+  margin: 0;
+
+  font-size: clamp(50px, 8vw, 120px);
+
+  line-height: 0.9;
+
+  letter-spacing: -6px;
+
+  font-weight: 800;
+}
+
+.about-intro-content h2 span {
+  color: #666;
+}
+
+.about-intro-content > p {
+  max-width: 650px;
+
+  color: #777;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  margin-top: 35px;
+}
+
+.about-statement {
+  margin-top: 70px;
+
+  padding-left: 25px;
+
+  border-left: 1px solid #444;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.about-statement span {
+  color: #555;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.about-statement strong {
+  font-size: clamp(28px, 4vw, 55px);
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+}
+
+
+/* =====================================================
+   CREATIVE
+===================================================== */
+
+.about-creative {
+  width: 86%;
+
+  margin: auto;
+
+  padding: 100px 0 160px;
+}
+
+.creative-intro {
+  margin: 60px 0;
+}
+
+.creative-intro h2 {
+  font-size: clamp(50px, 8vw, 110px);
+
+  line-height: .85;
+
+  letter-spacing: -6px;
+
+  margin: 0;
+}
+
+.creative-intro h2 span {
+  color: #666;
+}
+
+.creative-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+  perspective: 1000px;
+}
+
+.creative-card {
+  min-height: 380px;
+
+  padding: 30px;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #080808
+    );
+
+  border: 1px solid #242424;
+
+  transform:
+    perspective(900px)
+    rotateX(2deg)
+    translateZ(0);
+
+  transition: .5s ease;
+
+  overflow: hidden;
+}
+
+.creative-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.05),
+      transparent 35%
+    );
+
+  pointer-events: none;
+}
+
+.creative-card:hover {
+  transform:
+    perspective(900px)
+    rotateX(-3deg)
+    rotateY(4deg)
+    translateY(-15px)
+    translateZ(25px);
+
+  border-color: #555;
+}
+
+.creative-card-number {
+  position: absolute;
+
+  right: 25px;
+  top: 25px;
+
+  color: #333;
+
+  font-size: 35px;
+
+  font-weight: 800;
+}
+
+.creative-icon {
+  margin-top: 100px;
+
+  font-size: 35px;
+
+  color: #aaa;
+}
+
+.creative-card h3 {
+  margin: 25px 0 15px;
+
+  font-size: 25px;
+
+  letter-spacing: 2px;
+}
+
+.creative-card p {
+  color: #666;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+.creative-card-line {
+  position: absolute;
+
+  left: 30px;
+  right: 30px;
+  bottom: 25px;
+
+  height: 1px;
+
+  background: #252525;
+}
+
+
+/* =====================================================
+   HEAD
+===================================================== */
+
+.about-head {
+  position: relative;
+
+  width: 86%;
+
+  margin: auto;
+
+  padding: 160px 0;
+
+  border-top: 1px solid #151515;
+
+  overflow: hidden;
+}
+
+.head-background-text {
+  position: absolute;
+
+  right: -5%;
+
+  top: 120px;
+
+  color: #080808;
+
+  font-size: 18vw;
+
+  line-height: .8;
+
+  font-weight: 900;
+
+  letter-spacing: -15px;
+
+  pointer-events: none;
+
+  white-space: nowrap;
+
+  text-shadow: 1px 1px 0 #151515;
+}
+
+.head-layout {
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   HEAD VISUAL
+===================================================== */
+
+.head-visual {
+  position: relative;
+
+  perspective: 1200px;
+}
+
+.head-frame {
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  padding: 15px;
+
+  border: 1px solid #292929;
+
+  transform:
+    rotateY(8deg)
+    rotateX(2deg);
+
+  box-shadow:
+    30px 30px 80px rgba(0,0,0,.8);
+
+  transition: .5s ease;
+}
+
+.head-frame:hover {
+  transform:
+    rotateY(0deg)
+    rotateX(0deg)
+    translateZ(30px);
+}
+
+.head-frame-inner {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+background-image: url("/background.png");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+.head-frame-inner::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 20px;
+
+  border: 1px solid #252525;
+}
+
+.head-placeholder {
+  color: #555;
+
+  font-size: 45px;
+
+  font-weight: 900;
+
+  letter-spacing: -3px;
+}
+
+.head-placeholder-small {
+  margin-top: 10px;
+
+  color: #444;
+
+  font-size: 8px;
+
+  letter-spacing: 4px;
+}
+
+.head-vertical-text {
+  position: absolute;
+
+  right: -70px;
+  top: 50%;
+
+  transform: rotate(90deg);
+
+  color: #555;
+
+  font-size: 8px;
+
+  letter-spacing: 4px;
+}
+
+
+/* =====================================================
+   HEAD CONTENT
+===================================================== */
+
+.head-label {
+  color: #666;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+}
+
+.head-content h2 {
+  margin: 25px 0;
+
+  font-size: clamp(60px, 8vw, 110px);
+
+  line-height: .8;
+
+  letter-spacing: -7px;
+}
+
+.head-content h2 span {
+  display: block;
+
+  color: #666;
+
+  margin-left: 50px;
+}
+
+.head-line {
+  width: 100px;
+
+  height: 1px;
+
+  background: #555;
+
+  margin: 40px 0;
+}
+
+.head-quote {
+  max-width: 600px;
+
+  color: #ddd;
+
+  font-size: 20px;
+
+  line-height: 1.6;
+}
+
+.head-content > p:not(.head-quote) {
+  max-width: 600px;
+
+  color: #666;
+
+  font-size: 13px;
+
+  line-height: 1.9;
+
+  margin-top: 25px;
+}
+
+.head-signature {
+  margin-top: 50px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.head-signature span {
+  color: #444;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+}
+
+.head-signature strong {
+  color: #aaa;
+
+  font-size: 14px;
+
+  letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   PHILOSOPHY
+===================================================== */
+
+.about-philosophy {
+  position: relative;
+
+  min-height: 700px;
+
+  padding: 150px 7vw;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12vw;
+
+  overflow: hidden;
+
+  background: #050505;
+
+  border-top: 1px solid #151515;
+}
+
+.philosophy-circle {
+  width: 450px;
+  height: 450px;
+
+  flex-shrink: 0;
+
+  border: 1px solid #222;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    perspective(800px)
+    rotateX(65deg)
+    rotateZ(-20deg);
+
+  box-shadow:
+    0 0 100px rgba(255,255,255,.02);
+}
+
+.philosophy-circle-inner {
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  border: 1px solid #333;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #444;
+
+  font-size: 20px;
+
+  font-weight: 900;
+
+  letter-spacing: 5px;
+}
+
+.philosophy-content span {
+  color: #555;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+}
+
+.philosophy-content h2 {
+  margin: 25px 0;
+
+  font-size: clamp(55px, 8vw, 110px);
+
+  line-height: .85;
+
+  letter-spacing: -6px;
+}
+
+.philosophy-content h2 span {
+  color: #666;
+}
+
+.philosophy-content p {
+  max-width: 550px;
+
+  color: #666;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+
+/* =====================================================
+   WORKS
+===================================================== */
+
+.about-works {
+  width: 86%;
+
+  margin: auto;
+
+  padding: 150px 0;
+
+  border-top: 1px solid #151515;
+}
+
+.works-heading {
+  margin: 60px 0;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+}
+
+.works-heading h2 {
+  margin: 0;
+
+  font-size: clamp(60px, 9vw, 130px);
+
+  line-height: .8;
+
+  letter-spacing: -7px;
+}
+
+.works-heading h2 span {
+  display: block;
+
+  color: #666;
+
+  margin-left: 5vw;
+}
+
+.works-heading a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #aaa;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  transition: .3s ease;
+}
+
+.works-heading a:hover {
+  color: #fff;
+
+  transform: translateX(5px);
+}
+
+.works-list {
+  border-top: 1px solid #222;
+}
+
+.work-item {
+  min-height: 100px;
+
+  display: grid;
+
+  grid-template-columns: 70px 1fr 180px 40px;
+
+  align-items: center;
+
+  gap: 20px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #181818;
+
+  transition: .4s ease;
+}
+
+.work-item:hover {
+  padding: 0 20px;
+
+  background: #0c0c0c;
+}
+
+.work-item > span {
+  color: #444;
+
+  font-size: 10px;
+}
+
+.work-item h3 {
+  margin: 0;
+
+  font-size: 20px;
+
+  letter-spacing: 1px;
+}
+
+.work-item p {
+  margin: 0;
+
+  color: #555;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+.work-item svg {
+  color: #555;
+
+  transition: .3s ease;
+}
+
+.work-item:hover svg {
+  color: #fff;
+
+  transform: translate(5px, -5px);
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.about-final {
+  position: relative;
+
+  min-height: 750px;
+
+  padding: 130px 7vw;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  border-top: 1px solid #151515;
+}
+
+.final-grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(#111 1px, transparent 1px),
+    linear-gradient(90deg, #111 1px, transparent 1px);
+
+  background-size: 60px 60px;
+
+  opacity: .25;
+
+  transform:
+    perspective(500px)
+    rotateX(65deg)
+    translateY(250px)
+    scale(1.5);
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #000 40%,
+      transparent
+    );
+}
+
+.about-final > span {
+  position: relative;
+
+  color: #555;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+}
+
+.about-final h2 {
+  position: relative;
+
+  margin: 40px 0;
+
+  font-size: clamp(60px, 11vw, 160px);
+
+  line-height: .8;
+
+  letter-spacing: -9px;
+
+  text-shadow:
+    2px 2px 0 #222,
+    5px 5px 0 #151515,
+    10px 20px 50px #000;
+}
+
+.about-final h2 span {
+  color: #666;
+}
+
+.about-final p {
+  position: relative;
+
+  color: #666;
+
+  font-size: 13px;
+}
+
+.final-button {
+  position: relative;
+
+  margin-top: 30px;
+
+  padding: 18px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  color: #000;
+
+  background: #fff;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  transition: .4s ease;
+}
+
+.final-button:hover {
+  background: #aaa;
+
+  transform:
+    translateY(-8px)
+    translateZ(20px);
+}
+
+.final-button svg {
+  font-size: 17px;
+}
+
+.final-3d-text {
+  position: absolute;
+
+  bottom: -80px;
+
+  font-size: 22vw;
+
+  line-height: .7;
+
+  font-weight: 900;
+
+  color: #080808;
+
+  letter-spacing: -15px;
+
+  text-shadow: 1px 1px 0 #161616;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .creative-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .head-layout {
+    grid-template-columns: 1fr;
+
+    gap: 80px;
+  }
+
+  .head-visual {
+    max-width: 600px;
+  }
+
+  .about-philosophy {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .philosophy-circle {
+    width: 350px;
+    height: 350px;
+  }
+
+  .philosophy-circle-inner {
+    width: 230px;
+    height: 230px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .about-hero {
+    min-height: 90vh;
+
+    padding: 110px 7vw;
+  }
+
+  .about-hero-title {
+    font-size: 20vw;
+
+    letter-spacing: -5px;
+  }
+
+  .about-hero-title span {
+    margin-left: 5vw;
+  }
+
+  .about-hero-subtitle {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    margin-top: 35px;
+  }
+
+  .about-hero-number {
+    font-size: 80px;
+
+    right: 5vw;
+  }
+
+  .about-orbit {
+    opacity: .4;
+  }
+
+  .orbit-one {
+    width: 350px;
+    height: 350px;
+
+    right: -150px;
+  }
+
+  .orbit-two {
+    width: 260px;
+    height: 260px;
+
+    right: -100px;
+  }
+
+  .about-intro,
+  .about-creative,
+  .about-head,
+  .about-works {
+    width: 86%;
+  }
+
+  .about-intro {
+    padding: 100px 0;
+
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .about-intro-content h2 {
+    font-size: 14vw;
+
+    letter-spacing: -3px;
+  }
+
+  .about-creative {
+    padding: 70px 0 100px;
+  }
+
+  .creative-intro {
+    margin: 40px 0;
+  }
+
+  .creative-intro h2 {
+    font-size: 14vw;
+
+    letter-spacing: -3px;
+  }
+
+  .creative-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .creative-card {
+    min-height: 320px;
+  }
+
+  .about-head {
+    padding: 100px 0;
+  }
+
+  .head-layout {
+    margin-top: 60px;
+  }
+
+  .head-frame {
+    transform: none;
+  }
+
+  .head-vertical-text {
+    display: none;
+  }
+
+  .head-content h2 {
+    font-size: 18vw;
+
+    letter-spacing: -5px;
+  }
+
+  .head-content h2 span {
+    margin-left: 25px;
+  }
+
+  .head-quote {
+    font-size: 17px;
+  }
+
+  .head-background-text {
+    font-size: 30vw;
+
+    top: 160px;
+  }
+
+  .about-philosophy {
+    min-height: auto;
+
+    padding: 100px 7vw;
+
+    gap: 80px;
+  }
+
+  .philosophy-circle {
+    width: 280px;
+    height: 280px;
+
+    align-self: center;
+  }
+
+  .philosophy-circle-inner {
+    width: 190px;
+    height: 190px;
+
+    font-size: 13px;
+  }
+
+  .philosophy-content h2 {
+    font-size: 17vw;
+
+    letter-spacing: -4px;
+  }
+
+  .about-works {
+    padding: 100px 0;
+  }
+
+  .works-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+  .works-heading h2 {
+    font-size: 17vw;
+
+    letter-spacing: -4px;
+  }
+
+  .work-item {
+    min-height: 90px;
+
+    grid-template-columns: 35px 1fr 25px;
+  }
+
+  .work-item p {
+    display: none;
+  }
+
+  .work-item h3 {
+    font-size: 13px;
+  }
+
+  .about-final {
+    min-height: 650px;
+
+    padding: 100px 7vw;
+  }
+
+  .about-final h2 {
+    font-size: 17vw;
+
+    letter-spacing: -5px;
+  }
+
+  .final-3d-text {
+    bottom: -20px;
+
+    font-size: 27vw;
+
+    letter-spacing: -7px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .about-hero-title {
+    font-size: 19vw;
+  }
+
+  .creative-card {
+    min-height: 300px;
+  }
+
+  .head-content h2 {
+    font-size: 17vw;
+  }
+
+}

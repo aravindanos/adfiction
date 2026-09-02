@@ -1,0 +1,115 @@
+.content-section {
+  position: relative;
+
+  padding-top: 20px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #050505 10%
+    );
+
+  z-index: 10;
+}
+
+.video-row-section {
+  position: relative;
+
+  padding: 70px 0 20px;
+}
+
+.video-row-header {
+  padding: 0 6% 25px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.row-label {
+  margin-bottom: 8px;
+
+  font-size: 9px;
+
+  color: #666;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+.video-row-header h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(28px, 3vw, 42px);
+
+  font-weight: 500;
+}
+
+.row-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.row-controls button {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  transition: 0.3s ease;
+}
+
+.row-controls button:hover {
+  background: white;
+  color: black;
+}
+
+.video-row {
+  display: flex;
+
+  gap: 18px;
+
+  padding: 0 6% 35px;
+
+  overflow-x: auto;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+}
+
+.video-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .video-row-section {
+    padding-top: 45px;
+  }
+
+  .video-row-header {
+    padding: 0 5% 20px;
+  }
+
+  .row-controls {
+    display: none;
+  }
+
+  .video-row {
+    gap: 12px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+}
