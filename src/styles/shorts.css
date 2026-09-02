@@ -1,0 +1,516 @@
+/* =========================================
+   ADFICTION SHORTS / REELS
+========================================= */
+
+.shorts-page {
+  width: 100%;
+  height: 100dvh;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* =========================================
+   TOP NAVIGATION
+========================================= */
+
+.shorts-back {
+  position: fixed;
+  top: 28px;
+  left: 30px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.shorts-back svg {
+  font-size: 20px;
+}
+
+.shorts-brand {
+  position: fixed;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+.shorts-brand span {
+  color: #777;
+}
+
+.shorts-counter {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 100;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: #fff;
+}
+
+.shorts-counter span {
+  margin: 0 5px;
+  color: #555;
+}
+
+/* =========================================
+   SCROLL CONTAINER
+========================================= */
+
+.shorts-container {
+  width: 100%;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+}
+
+.shorts-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================
+   EACH REEL
+========================================= */
+
+.short-slide {
+  width: 100%;
+  height: 100dvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  padding: 80px 20px 30px;
+}
+
+/* =========================================
+   VIDEO FRAME
+========================================= */
+
+.short-video-wrap {
+  position: relative;
+
+  width: min(420px, 100%);
+  height: calc(100dvh - 110px);
+
+  max-height: 850px;
+
+  aspect-ratio: 9 / 16;
+
+  overflow: hidden;
+
+  background: #111;
+
+  border: 1px solid #222;
+
+  box-shadow:
+    0 0 0 1px #080808,
+    20px 30px 80px rgba(0, 0, 0, 0.9);
+}
+
+/* VIDEO */
+
+.short-video {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  border: none;
+
+  pointer-events: none;
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.short-overlay {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      transparent 25%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.95)
+    );
+}
+
+/* =========================================
+   CENTER PLAY
+========================================= */
+
+.short-center-play {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,.4);
+
+  background:
+    rgba(0,0,0,.35);
+
+  opacity: 0;
+
+  transition: 0.3s ease;
+
+  pointer-events: none;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.short-content {
+  position: absolute;
+
+  left: 25px;
+  right: 25px;
+  bottom: 28px;
+
+  z-index: 5;
+}
+
+.short-category {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #aaa;
+
+  font-size: 8px;
+
+  letter-spacing: 0.25em;
+
+  font-weight: 700;
+}
+
+.short-content h2 {
+  margin: 0;
+
+  max-width: 80%;
+
+  font-size: clamp(25px, 3vw, 38px);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.04em;
+
+  font-weight: 900;
+}
+
+.short-content p {
+  margin: 12px 0 0;
+
+  max-width: 80%;
+
+  color: #bbb;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+.short-meta {
+  display: flex;
+
+  gap: 9px;
+
+  margin-top: 15px;
+
+  color: #888;
+
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+}
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.short-actions {
+  position: absolute;
+
+  right: 18px;
+  bottom: 30px;
+
+  z-index: 10;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.short-action {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  border: 1px solid rgba(255,255,255,.25);
+
+  background:
+    rgba(0,0,0,.45);
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  backdrop-filter: blur(10px);
+}
+
+.short-action svg {
+  font-size: 18px;
+}
+
+.short-action:hover {
+  background: #fff;
+  color: #000;
+
+  transform: scale(1.08);
+}
+
+.short-action.active {
+  background: #fff;
+  color: #000;
+}
+
+/* =========================================
+   ACTIVE INDICATOR
+========================================= */
+
+.short-active-line {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #fff;
+
+  transform-origin: left;
+
+  animation:
+    shortProgress 8s linear infinite;
+}
+
+@keyframes shortProgress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.shorts-empty {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+
+  background: #000;
+  color: #fff;
+}
+
+.shorts-empty h1 {
+  font-size: clamp(35px, 8vw, 80px);
+}
+
+.shorts-empty a {
+  color: #888;
+  text-decoration: none;
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .shorts-back {
+    top: 20px;
+    left: 20px;
+  }
+
+  .shorts-brand {
+    top: 21px;
+    font-size: 13px;
+  }
+
+  .shorts-counter {
+    top: 22px;
+    right: 20px;
+  }
+
+  .short-slide {
+    padding: 65px 15px 15px;
+  }
+
+  .short-video-wrap {
+    width: min(400px, 100%);
+    height: calc(100dvh - 80px);
+  }
+
+  .short-content {
+    left: 20px;
+    right: 20px;
+    bottom: 22px;
+  }
+
+  .short-actions {
+    right: 14px;
+    bottom: 24px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .shorts-back span {
+    display: none;
+  }
+
+  .shorts-back {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    justify-content: center;
+
+    background: rgba(0,0,0,.4);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 50%;
+
+    backdrop-filter: blur(10px);
+  }
+
+  .shorts-brand {
+    font-size: 12px;
+  }
+
+  .shorts-counter {
+    font-size: 8px;
+  }
+
+  .short-slide {
+    padding: 0;
+  }
+
+  .short-video-wrap {
+    width: 100%;
+    height: 100dvh;
+
+    max-height: none;
+
+    border: none;
+
+    aspect-ratio: auto;
+
+    box-shadow: none;
+  }
+
+  .short-content {
+    left: 18px;
+    bottom: 25px;
+
+    padding-right: 55px;
+  }
+
+  .short-content h2 {
+    font-size: 28px;
+    max-width: 100%;
+  }
+
+  .short-content p {
+    font-size: 10px;
+    max-width: 100%;
+  }
+
+  .short-actions {
+    right: 12px;
+    bottom: 35px;
+
+    gap: 10px;
+  }
+
+  .short-action {
+    width: 40px;
+    height: 40px;
+  }
+
+  .short-category {
+    font-size: 7px;
+  }
+}

@@ -253,6 +253,157 @@ const videos = [
     description: "A cinematic short film from ADFICTION.",
     featured: false,
   },
+
+
+
+
+
+
+
+  // =====================================================
+  // SHORTS
+  // =====================================================
+
+
+
+  {
+  id: "short-01", 
+  youtubeId: "b0fiNfJqgrs",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+{
+  id: "short-02", 
+  youtubeId: "Iq2H_6XvqW0",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-03", 
+  youtubeId: "NQ3g1h1rtJs",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-04", 
+  youtubeId: "hDkTH_6a5oE",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-05", 
+  youtubeId: "g6IGYYnLIQQ",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-06", 
+  youtubeId: "FOnYTt8Udh8",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-07", 
+  youtubeId: "pqh_QpmEPJU",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-08", 
+  youtubeId: "EDubgXM7lnU",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-09", 
+  youtubeId: "ltrQkNQXiS4",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-10", 
+  youtubeId: "_Tf0Pz71bgI",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-11", 
+  youtubeId: "_C0b3bv83r4",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-12", 
+  youtubeId: "hVs5GCwo5-Q",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-13", 
+  youtubeId: "K6onrYWYeMk",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
+
+{
+  id: "short-14", 
+  youtubeId: "OarohzytM0o",
+  category: "Shorts",
+  genre: "Short Video",
+  year: "2026",
+  description: "A cinematic short from ADFICTION.",
+  featured: false,
+},
 ];
 
 export default videos;

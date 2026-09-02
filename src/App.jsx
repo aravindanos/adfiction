@@ -12,6 +12,7 @@ import VideoPlayer from "./pages/VideoPlayer";
 import About from "./pages/About";
 import Favorites from "./pages/Favorites";
 import Channels from "./pages/Channels";
+import Shorts from "./pages/Shorts";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -57,6 +58,8 @@ function AnimatedRoutes() {
   path="/channels"
   element={<Channels />}
 />
+
+  <Route path="/shorts" element={<Shorts />} />
           <Route
             path="/watch/:videoId"
             element={<Watch />}

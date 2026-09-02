@@ -78,7 +78,7 @@ function Navbar() {
 
         <div className="nav-mobile-header">
           <span>MENU</span>
-          <span>01 — 05</span>
+          <span>01 — 06</span>
         </div>
 
         <Link to="/" onClick={closeMenu}>
@@ -104,7 +104,14 @@ function Navbar() {
           <span>Album Songs</span>
           <FiArrowUpRight />
         </Link>
-
+  <Link
+          to="/shorts"
+          onClick={closeMenu}
+        >
+          <span className="nav-number">04</span>
+          <span>Shorts</span>
+          <FiArrowUpRight />
+        </Link>
         <Link
           to="/about"
           onClick={closeMenu}

@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
-import Channels from "../pages/Channels";
+import Channels from "../pages/Channels"; 
 import VideoRow from "../components/VideoRow";
 
 import videos from "../data/videos";
@@ -15,6 +15,9 @@ function Home() {
 
   const albumSongs = videos.filter(
     (video) => video.category === "Album Songs"
+  );
+  const shorts = videos.filter(
+    (video) => video.category === "Shorts"
   );
 
 const latest = [...videos].sort(
@@ -49,6 +52,12 @@ const latest = [...videos].sort(
     <VideoRow
       title="Album Songs"
       videos={albumSongs}
+    />
+  </Reveal>
+    <Reveal delay={0.16}>
+    <VideoRow
+      title="Shorts"
+      videos={shorts}
     />
   </Reveal>
 </section>
