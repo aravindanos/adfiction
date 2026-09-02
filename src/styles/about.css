@@ -739,7 +739,7 @@ background-repeat: no-repeat;
 .head-content h2 {
   margin: 25px 0;
 
-  font-size: clamp(60px, 8vw, 110px);
+  font-size: clamp(50px, 8vw, 110px);
 
   line-height: .8;
 
@@ -2187,7 +2187,7 @@ background-repeat: no-repeat;
   }
 
   .head-content h2 {
-    font-size: 17vw;
+    font-size: 14vw;
 
     letter-spacing: -4px;
   }
@@ -2398,7 +2398,7 @@ background-repeat: no-repeat;
   }
 
   .head-content h2 {
-    font-size: 16vw;
+    font-size: 14vw;
 
     letter-spacing: -3px;
   }
@@ -2485,7 +2485,7 @@ background-repeat: no-repeat;
   }
 
   .head-content h2 {
-    font-size: 15.5vw;
+    font-size: 14.5vw;
   }
 
   .philosophy-circle {
