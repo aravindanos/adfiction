@@ -268,6 +268,7 @@ const videos = [
 
   {
   id: "short-01", 
+  title: "shorts1",
   youtubeId: "b0fiNfJqgrs",
   category: "Shorts",
   genre: "Short Video",
@@ -277,6 +278,7 @@ const videos = [
 },
 {
   id: "short-02", 
+  title: "shorts2",
   youtubeId: "Iq2H_6XvqW0",
   category: "Shorts",
   genre: "Short Video",
@@ -287,6 +289,7 @@ const videos = [
 
 {
   id: "short-03", 
+  title: "shorts3",
   youtubeId: "NQ3g1h1rtJs",
   category: "Shorts",
   genre: "Short Video",
@@ -297,6 +300,7 @@ const videos = [
 
 {
   id: "short-04", 
+  title: "shorts4",
   youtubeId: "hDkTH_6a5oE",
   category: "Shorts",
   genre: "Short Video",
@@ -307,6 +311,7 @@ const videos = [
 
 {
   id: "short-05", 
+  title: "shorts5",
   youtubeId: "g6IGYYnLIQQ",
   category: "Shorts",
   genre: "Short Video",
@@ -317,6 +322,7 @@ const videos = [
 
 {
   id: "short-06", 
+  title: "shorts6",
   youtubeId: "FOnYTt8Udh8",
   category: "Shorts",
   genre: "Short Video",
@@ -327,6 +333,7 @@ const videos = [
 
 {
   id: "short-07", 
+  title: "shorts7",
   youtubeId: "pqh_QpmEPJU",
   category: "Shorts",
   genre: "Short Video",
@@ -337,6 +344,7 @@ const videos = [
 
 {
   id: "short-08", 
+  title: "shorts8",
   youtubeId: "EDubgXM7lnU",
   category: "Shorts",
   genre: "Short Video",
@@ -347,6 +355,7 @@ const videos = [
 
 {
   id: "short-09", 
+  title: "shorts9",
   youtubeId: "ltrQkNQXiS4",
   category: "Shorts",
   genre: "Short Video",
@@ -357,6 +366,7 @@ const videos = [
 
 {
   id: "short-10", 
+  title: "shorts10",
   youtubeId: "_Tf0Pz71bgI",
   category: "Shorts",
   genre: "Short Video",
@@ -367,6 +377,7 @@ const videos = [
 
 {
   id: "short-11", 
+  title: "shorts11",
   youtubeId: "_C0b3bv83r4",
   category: "Shorts",
   genre: "Short Video",
@@ -377,6 +388,7 @@ const videos = [
 
 {
   id: "short-12", 
+  title: "shorts12",
   youtubeId: "hVs5GCwo5-Q",
   category: "Shorts",
   genre: "Short Video",
@@ -387,6 +399,7 @@ const videos = [
 
 {
   id: "short-13", 
+  title: "shorts13",
   youtubeId: "K6onrYWYeMk",
   category: "Shorts",
   genre: "Short Video",
@@ -397,6 +410,7 @@ const videos = [
 
 {
   id: "short-14", 
+  title: "shorts14",
   youtubeId: "OarohzytM0o",
   category: "Shorts",
   genre: "Short Video",
