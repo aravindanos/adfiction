@@ -78,7 +78,7 @@ function Navbar() {
 
         <div className="nav-mobile-header">
           <span>MENU</span>
-          <span>01 — 04</span>
+          <span>01 — 05</span>
         </div>
 
         <Link to="/" onClick={closeMenu}>
@@ -124,8 +124,7 @@ function Navbar() {
         </Link>
         
         <div className="mobile-menu-footer">
-          <span>ADFICTION ORIGINALS</span>
-          <span>EST. 2025</span>
+          <span>ADFICTION ORIGINALS</span> 
         </div>
 
       </nav>
