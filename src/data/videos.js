@@ -24,17 +24,17 @@ const videos = [
     description: "An original album song from ADFICTION.",
     featured: false,
   },
-
-  {
-    id: "album-03",
-    title: "Kutty Kanna - கிருஷ்ணன் பாடல்",
-    youtubeId: "3WA1F00VDZA",
+        {
+    id: "album-3",
+    title: "Thangamey - Official Video Song - Appavin Valimai 2 ",
+    youtubeId: "RkHtd_kyjvY",
     category: "Album Songs",
     genre: "Music",
-    year: "2026",
-    description: "An original album song from ADFICTION.",
+    year: "2023",
+    description: "An original album song from SRV MEDIA.",
     featured: false,
   },
+ 
 
   {
     id: "album-04",
@@ -80,6 +80,46 @@ const videos = [
     featured: false,
   },
 
+    {
+    id: "album-08",
+    title: "En Chellakutty - Album Song",
+    youtubeId: "D3TaepKo2ek",
+    category: "Album Songs",
+    genre: "Music",
+    year: "2021",
+    description: "An original album song from SRV MEDIA.",
+    featured: false,
+  },
+      {
+    id: "album-09",
+    title: "Enthan Thanthaiye Video Song - Appavin Valimai",
+    youtubeId: "cbJAlI1DadM",
+    category: "Album Songs",
+    genre: "Music",
+    year: "2021",
+    description: "An original album song from SRV MEDIA.",
+    featured: false,
+  },
+ {
+    id: "album-10",
+    title: "Kutty Kanna - கிருஷ்ணன் பாடல்",
+    youtubeId: "3WA1F00VDZA",
+    category: "Album Songs",
+    genre: "Music",
+    year: "2026",
+    description: "An original album song from ADFICTION.",
+    featured: false,
+  },
+      {
+    id: "album-11",
+    title: "Uyire Video Song - Appavin Valimai 2",
+    youtubeId: "CygPjWtaEt8",
+    category: "Album Songs",
+    genre: "Music",
+    year: "2023",
+    description: "An original album song from SRV MEDIA.",
+    featured: false,
+  },
   // =====================================================
   // SHORT FILMS
   // =====================================================
@@ -106,29 +146,30 @@ const videos = [
     featured: false,
   },
 
-  {
+
+
+
+    {
     id: "shortfilm-03",
-    title: "LAST SEEN - Emotional Tamil Short Film",
-    youtubeId: "hRfJfetOqRM",
+    title: "Appavin Valimai ShortFilm - A Father's Love Short Film",
+    youtubeId: "lvgesPngKrQ",
     category: "Short Films",
     genre: "Short Film",
-    year: "2026",
-    description: "A cinematic short film from ADFICTION.",
+    year: "2021",
+    description: "A cinematic short film from SRV MEDIA.",
     featured: false,
   },
-
-  {
+    {
     id: "shortfilm-04",
-    title: "Punch Monkey - An Animated Short Film",
-    youtubeId: "PNuGVRH_Jnc",
+    title: "Appavin Valimai 2 ShortFilm - A Photographer's Journey Short Film",
+    youtubeId: "COiYO7HlB0o",
     category: "Short Films",
     genre: "Short Film",
-    year: "2026",
-    description: "A cinematic short film from ADFICTION.",
+    year: "2023",
+    description: "A cinematic short film from SRV MEDIA.",
     featured: false,
   },
-
-  {
+    {
     id: "shortfilm-05",
     title: "Mr.Nadigan - ShortFilm",
     youtubeId: "N0C6fGmZGAs",
@@ -146,6 +187,69 @@ const videos = [
     category: "Short Films",
     genre: "Short Film",
     year: "2021",
+    description: "A cinematic short film from ADFICTION.",
+    featured: false,
+  },
+     {
+    id: "shortfilm-07",
+    title: "Dead Key ShortFilm - A Fantacy Horror Short Film",
+    youtubeId: "4_pt7f9iEPg",
+    category: "Short Films",
+    genre: "Short Film",
+    year: "2019",
+    description: "A cinematic short film from SRV MEDIA.",
+    featured: false,
+  },
+
+       {
+    id: "shortfilm-08",
+    title: "Matin Spirit ShortFilm - A Horror, Sci Fi Short film",
+    youtubeId: "E2ckiARrlvE",
+    category: "Short Films",
+    genre: "Short Film",
+    year: "2021",
+    description: "A cinematic short film from SRV MEDIA.",
+    featured: false,
+  },
+         {
+    id: "shortfilm-09",
+    title: "Kadhal Ivalavuthan ShortFilm - A Love Short film",
+    youtubeId: "tqVWxYpFHq8",
+    category: "Short Films",
+    genre: "Short Film",
+    year: "2021",
+    description: "A cinematic short film from SRV MEDIA.",
+    featured: false,
+  },
+           {
+    id: "shortfilm-10",
+    title: "Suzhal - The Spin of Time - A TimeLoop Short film",
+    youtubeId: "vG7G5r_-uY4",
+    category: "Short Films",
+    genre: "Short Film",
+    year: "2024",
+    description: "A cinematic short film from SRV MEDIA.",
+    featured: false,
+  },
+
+  {
+    id: "shortfilm-12",
+    title: "LAST SEEN - Emotional Tamil Short Film",
+    youtubeId: "hRfJfetOqRM",
+    category: "Short Films",
+    genre: "Short Film",
+    year: "2026",
+    description: "A cinematic short film from ADFICTION.",
+    featured: false,
+  },
+
+  {
+    id: "shortfilm-13",
+    title: "Punch Monkey - An Animated Short Film",
+    youtubeId: "PNuGVRH_Jnc",
+    category: "Short Films",
+    genre: "Short Film",
+    year: "2026",
     description: "A cinematic short film from ADFICTION.",
     featured: false,
   },

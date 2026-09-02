@@ -61,12 +61,9 @@ function Footer() {
           <span className="footer-column-title">
             NAVIGATION
           </span>
-
-          <Link to="/">HOME</Link>
+ 
           <Link to="/short-films">SHORT FILMS</Link>
-          <Link to="/album-songs">ALBUM SONGS</Link>
-          <Link to="/about">ABOUT</Link>
-
+          <Link to="/album-songs">ALBUM SONGS</Link> 
         </div>
 
         {/* SOCIAL */}
@@ -125,7 +122,7 @@ function Footer() {
         </div>
 
         <div className="footer-bottom-center">
-          MADE FOR THE STORIES
+          Designed & Built by <a href="https://aravind-profile.vercel.app" target="_blank" rel="noopener noreferrer">Aravindan OS</a>
         </div>
 
         <button

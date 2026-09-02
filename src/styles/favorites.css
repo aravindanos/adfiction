@@ -1,0 +1,576 @@
+/* =====================================================
+   ADFICTION FAVORITES
+===================================================== */
+
+.favorites-page {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.favorites-hero {
+  min-height: 55vh;
+
+  padding: 180px 7vw 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-bottom: 1px solid #151515;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #171717 0%,
+      #080808 50%,
+      #000 100%
+    );
+}
+
+.favorites-eyebrow {
+  color: #666;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+}
+
+.favorites-hero h1 {
+  margin: 30px 0 20px;
+
+  font-size: clamp(70px, 12vw, 170px);
+
+  line-height: 0.8;
+
+  letter-spacing: -8px;
+
+  font-weight: 800;
+}
+
+.favorites-hero h1 span {
+  display: block;
+
+  color: #666;
+
+  margin-left: 7vw;
+}
+
+.favorites-hero p {
+  color: #666;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.favorites-content {
+  width: 86%;
+
+  margin: auto;
+
+  padding: 100px 0 150px;
+}
+
+.favorites-header {
+  margin-bottom: 50px;
+}
+
+.favorites-label {
+  color: #555;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+}
+
+.favorites-header h2 {
+  margin-top: 15px;
+
+  font-size: 40px;
+
+  letter-spacing: -2px;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.favorites-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.favorite-card {
+  background: #090909;
+
+  border: 1px solid #202020;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.favorite-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #444;
+}
+
+
+/* =====================================================
+   THUMBNAIL
+===================================================== */
+
+.favorite-thumbnail {
+  position: relative;
+
+  display: block;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.favorite-thumbnail img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.favorite-card:hover
+.favorite-thumbnail img {
+  transform: scale(1.05);
+}
+
+.favorite-play {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  transition: opacity 0.3s ease;
+}
+
+.favorite-card:hover
+.favorite-play {
+  opacity: 1;
+}
+
+.favorite-play svg {
+  width: 45px;
+  height: 45px;
+
+  padding: 13px;
+
+  border: 1px solid #fff;
+
+  border-radius: 50%;
+
+  color: #fff;
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.favorite-info {
+  padding: 22px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.favorite-category {
+  color: #555;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+}
+
+.favorite-info h3 {
+  margin-top: 10px;
+
+  font-size: 18px;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.5px;
+}
+
+.favorite-info p {
+  margin-top: 8px;
+
+  color: #555;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   REMOVE BUTTON
+===================================================== */
+
+.favorite-remove {
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+
+  border: 1px solid #252525;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.favorite-remove:hover {
+  color: #fff;
+
+  border-color: #555;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.favorites-empty {
+  min-height: 400px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border: 1px solid #181818;
+
+  background: #060606;
+}
+
+.favorites-empty > svg {
+  width: 45px;
+  height: 45px;
+
+  margin-bottom: 25px;
+
+  color: #444;
+}
+
+.favorites-empty h3 {
+  font-size: 25px;
+
+  letter-spacing: 2px;
+}
+
+.favorites-empty p {
+  max-width: 400px;
+
+  margin-top: 12px;
+
+  color: #555;
+
+  font-size: 12px;
+}
+
+.favorites-explore {
+  margin-top: 30px;
+
+  padding: 14px 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  color: #000;
+
+  background: #fff;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.favorites-explore:hover {
+  background: #aaa;
+
+  transform: translateY(-4px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .favorites-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .favorites-hero {
+    padding-top: 160px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .favorites-hero {
+    min-height: 45vh;
+
+    padding: 130px 7vw 80px;
+  }
+
+  .favorites-eyebrow {
+    font-size: 7px;
+
+    letter-spacing: 3px;
+  }
+
+  .favorites-hero h1 {
+    margin-top: 25px;
+
+    font-size: 17vw;
+
+    letter-spacing: -5px;
+  }
+
+  .favorites-content {
+    width: 86%;
+
+    padding: 70px 0 100px;
+  }
+
+  .favorites-header h2 {
+    font-size: 30px;
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .favorite-info {
+    padding: 18px;
+  }
+
+  .favorite-info h3 {
+    font-size: 15px;
+  }
+
+  .favorite-remove {
+    width: 34px;
+    height: 34px;
+  }
+
+  .favorites-empty {
+    min-height: 350px;
+
+    padding: 30px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .favorites-hero h1 {
+    font-size: 16vw;
+
+    letter-spacing: -4px;
+  }
+
+  .favorite-info h3 {
+    font-size: 13px;
+  }
+
+  .favorites-empty h3 {
+    font-size: 20px;
+  }
+}
+
+
+/* =====================================================
+   FIXED BACK TO HOME
+===================================================== */
+
+.about-back-home {
+  position: fixed;
+  top: 110px;
+  right: 40px;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 11px 17px 11px 11px;
+
+  color: #fff;
+  text-decoration: none;
+
+  background: rgba(10, 10, 10, 0.75);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transform: perspective(700px) rotateY(8deg);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Arrow box */
+
+.back-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: #111;
+
+  box-shadow:
+    4px 4px 0 #333,
+    7px 7px 0 rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.35s ease;
+}
+
+.back-icon svg {
+  font-size: 17px;
+}
+
+/* Text */
+
+.back-text {
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  white-space: nowrap;
+}
+
+/* Hover */
+
+.about-back-home:hover {
+  background: #1a1a1a;
+
+  border-color: rgba(255, 255, 255, 0.5);
+
+  transform:
+    perspective(700px)
+    rotateY(0deg)
+    translateX(5px);
+}
+
+.about-back-home:hover .back-icon {
+  transform: translateX(-3px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .about-back-home {
+    top: 90px;
+    right: 18px;
+
+    padding: 8px 12px 8px 8px;
+
+    gap: 9px;
+  }
+
+  .back-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .back-icon svg {
+    font-size: 15px;
+  }
+
+  .back-text {
+    font-size: 8px;
+    letter-spacing: 0.14em;
+  }
+
+}
+

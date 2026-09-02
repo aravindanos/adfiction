@@ -10,6 +10,8 @@ import ShortFilms from "./pages/ShortFilms";
 import AlbumSongs from "./pages/AlbumSongs";
 import VideoPlayer from "./pages/VideoPlayer";
 import About from "./pages/About";
+import Favorites from "./pages/Favorites";
+import Channels from "./pages/Channels";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -51,13 +53,18 @@ function AnimatedRoutes() {
             path="/album-songs"
             element={<AlbumSongs />}
           />
-
+<Route
+  path="/channels"
+  element={<Channels />}
+/>
           <Route
             path="/watch/:videoId"
             element={<Watch />}
           />
           <Route path="/about" element={<About />} />
+          <Route path="/favorites" element={<Favorites />} /> 
           <Route path="/watch/:id" element={<VideoPlayer />} />
+          
         </Routes>
       </motion.div>
     </AnimatePresence>

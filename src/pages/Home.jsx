@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
+import Channels from "../pages/Channels";
 import VideoRow from "../components/VideoRow";
 
 import videos from "../data/videos";
@@ -16,7 +17,9 @@ function Home() {
     (video) => video.category === "Album Songs"
   );
 
-  const latest = [...videos].reverse();
+const latest = [...videos].sort(
+  (a, b) => Number(b.year) - Number(a.year)
+);
 
   return (
     <div className="app">
@@ -29,10 +32,10 @@ function Home() {
 
       <section className="content-section">
   <Reveal>
-    <VideoRow
-      title="Latest Releases"
-      videos={videos}
-    />
+ <VideoRow 
+  title="Latest Releases" 
+  videos={latest}
+/>
   </Reveal>
 
   <Reveal delay={0.08}>
@@ -49,6 +52,7 @@ function Home() {
     />
   </Reveal>
 </section>
+        <Channels />
 
       <Reveal>
   <section className="home-intro">

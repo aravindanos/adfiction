@@ -1,0 +1,1892 @@
+/* =========================================
+   ADFICTION CHANNELS PAGE
+========================================= */
+
+.channels-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: #000;
+  color: #fff;
+
+  perspective: 1400px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.channels-hero {
+  position: relative;
+
+  min-height: 90vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    140px
+    6vw
+    100px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* GRID */
+
+.channels-grid {
+  position: absolute;
+
+  inset: -30%;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  transform:
+    perspective(600px)
+    rotateX(65deg)
+    translateY(30%);
+
+  transform-origin: center bottom;
+
+  opacity: 0.45;
+
+  z-index: -3;
+}
+
+
+/* HERO GLOW */
+
+.channels-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.08),
+      transparent 68%
+    );
+
+  pointer-events: none;
+
+  z-index: -2;
+}
+
+
+/* ORBITS */
+
+.channels-orbit {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.orbit-one {
+  width: 700px;
+  height: 280px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-18deg);
+}
+
+.orbit-two {
+  width: 950px;
+  height: 400px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(25deg);
+
+  opacity: 0.5;
+}
+
+
+/* HERO CONTENT */
+
+.channels-hero-content {
+  position: relative;
+
+  max-width: 1100px;
+
+  text-align: center;
+
+  z-index: 2;
+}
+
+.channels-eyebrow {
+  display: block;
+
+  margin-bottom: 28px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.35em;
+
+  color: #888;
+}
+
+.channels-hero h1 {
+  margin: 0;
+
+  font-family:
+    "Montserrat",
+    "Inter",
+    sans-serif;
+
+  font-size:
+    clamp(70px, 13vw, 190px);
+
+  line-height: 0.78;
+
+  font-weight: 900;
+
+  letter-spacing: -0.07em;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 3px 0 #444,
+    0 8px 0 #222,
+    0 25px 50px rgba(0, 0, 0, 0.9);
+}
+
+.channels-hero h1 span {
+  display: block;
+
+  color: #888;
+
+  transform:
+    translateX(7%);
+}
+
+.channels-hero p {
+  margin-top: 45px;
+
+  color: #777;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* SCROLL */
+
+.channels-scroll {
+  position: absolute;
+
+  bottom: 40px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.channels-scroll span {
+  font-size: 8px;
+
+  letter-spacing: 0.25em;
+
+  color: #666;
+}
+
+.channels-scroll div {
+  width: 1px;
+  height: 45px;
+
+  background:
+    linear-gradient(
+      #fff,
+      transparent
+    );
+}
+
+
+/* =========================================
+   CHANNEL SECTION
+========================================= */
+
+.channels-section {
+  position: relative;
+
+  padding:
+    130px
+    6vw
+    150px;
+
+  border-top: 1px solid #181818;
+}
+
+
+/* SECTION HEADING */
+
+.channels-section-heading {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    0.65fr;
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 90px;
+}
+
+.channels-section-heading span {
+  font-size: 9px;
+
+  letter-spacing: 0.3em;
+
+  color: #666;
+}
+
+.channels-section-heading h2 {
+  margin-top: 22px;
+
+  font-family:
+    "Montserrat",
+    "Inter",
+    sans-serif;
+
+  font-size:
+    clamp(50px, 7vw, 100px);
+
+  line-height: 0.82;
+
+  font-weight: 800;
+
+  letter-spacing: -0.06em;
+}
+
+.channels-section-heading h2 strong {
+  color: #777;
+}
+
+.channels-section-heading p {
+  max-width: 420px;
+
+  color: #666;
+
+  font-size: 13px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================
+   CHANNEL LIST
+========================================= */
+
+.channels-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 35px;
+
+  max-width: 1500px;
+
+  margin: auto;
+}
+
+
+/* =========================================
+   CHANNEL CARD
+========================================= */
+
+.channel-card {
+  position: relative;
+
+  display: block;
+
+  min-height: 620px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  perspective: 1200px;
+
+  transform-style: preserve-3d;
+}
+
+
+/* NUMBER */
+
+.channel-number {
+  position: absolute;
+
+  top: -20px;
+  left: 25px;
+
+  z-index: 5;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 80px;
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  color: #111;
+
+  -webkit-text-stroke:
+    1px #333;
+
+  pointer-events: none;
+}
+
+
+/* CARD INNER */
+
+.channel-card-inner {
+  position: relative;
+
+  height: 100%;
+
+  min-height: 620px;
+
+  padding: 35px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #111,
+      #050505 55%,
+      #0d0d0d
+    );
+
+  border:
+    1px solid #252525;
+
+  box-shadow:
+    15px 15px 0 #080808,
+    25px 25px 45px rgba(0, 0, 0, 0.8);
+
+  transform:
+    rotateX(2deg)
+    rotateY(0deg);
+
+  transition:
+    transform 0.6s cubic-bezier(
+      0.2,
+      0.8,
+      0.2,
+      1
+    ),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* CARD LIGHT */
+
+.channel-card-inner::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.06),
+      transparent 30%
+    );
+
+  pointer-events: none;
+}
+
+
+/* HOVER */
+
+.channel-card:hover
+.channel-card-inner {
+  transform:
+    perspective(1200px)
+    rotateX(3deg)
+    rotateY(-5deg)
+    translateY(-15px)
+    translateZ(25px);
+
+  border-color: #555;
+
+  box-shadow:
+    20px 20px 0 #080808,
+    35px 35px 60px rgba(0, 0, 0, 0.9);
+}
+
+
+/* TOP */
+
+.channel-card-top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  color: #666;
+}
+
+.channel-card-top span {
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+}
+
+.channel-card-top svg {
+  font-size: 22px;
+
+  color: #aaa;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.channel-card:hover
+.channel-card-top svg {
+  transform:
+    translate(5px, -5px);
+}
+
+
+/* =========================================
+   LOGO AREA
+========================================= */
+
+.channel-logo-area {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 230px;
+}
+
+
+/* GLOW */
+
+.channel-logo-glow {
+  position: absolute;
+
+  width: 230px;
+  height: 230px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.09),
+      transparent 70%
+    );
+
+  filter: blur(15px);
+}
+
+
+/* FRAME */
+
+.channel-logo-frame {
+  position: relative;
+
+  width: 170px;
+  height: 170px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #090909; 
+    border-radius: 50%;
+  border:
+    1px solid #333;
+
+  box-shadow:
+    8px 8px 0 #151515,
+    15px 15px 30px rgba(0, 0, 0, 0.8);
+
+  transform:
+    rotateY(-8deg);
+
+  transition:
+    transform 0.5s ease;
+}
+
+.channel-card:hover
+.channel-logo-frame {
+  transform:
+    rotateY(0deg)
+    rotateX(-4deg)
+    translateY(-8px)
+    scale(1.04);
+}
+
+.channel-logo-frame img {
+  width: 72%;
+
+  height: 72%;
+
+  object-fit: contain;
+ 
+
+  transition:
+    filter 0.4s ease;
+}
+
+ 
+
+/* =========================================
+   CHANNEL INFO
+========================================= */
+
+.channel-info {
+  position: relative;
+
+  z-index: 2;
+}
+
+.channel-handle {
+  font-size: 9px;
+
+  letter-spacing: 0.2em;
+
+  color: #666;
+}
+
+.channel-info h3 {
+  margin:
+    10px
+    0
+    15px;
+
+  font-family:
+    "Montserrat",
+    "Inter",
+    sans-serif;
+
+  font-size:
+    clamp(38px, 5vw, 65px);
+
+  line-height: 0.9;
+
+  font-weight: 900;
+
+  letter-spacing: -0.05em;
+}
+
+.channel-info p {
+  max-width: 400px;
+
+  color: #777;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.channel-card-footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 25px;
+
+  border-top:
+    1px solid #222;
+}
+
+.channel-card-footer > span {
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+
+  color: #777;
+}
+
+.channel-play {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid #444;
+
+  background: #111;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+
+.channel-play svg {
+  font-size: 18px;
+}
+
+.channel-card:hover
+.channel-play {
+  transform:
+    rotate(-8deg)
+    scale(1.1);
+
+  background: #fff;
+
+  color: #000;
+}
+
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.channels-final {
+  position: relative;
+
+  min-height: 80vh;
+
+  padding:
+    130px 6vw;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border-top: 1px solid #181818;
+
+  overflow: hidden;
+}
+
+.channels-final::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  border:
+    1px solid #151515;
+
+  border-radius: 50%;
+
+  transform:
+    perspective(500px)
+    rotateX(70deg);
+
+  pointer-events: none;
+}
+
+.channels-final > span {
+  font-size: 9px;
+
+  color: #666;
+
+  letter-spacing: 0.3em;
+}
+
+.channels-final h2 {
+  margin:
+    30px
+    0
+    50px;
+
+  font-family:
+    "Montserrat",
+    "Inter",
+    sans-serif;
+
+  font-size:
+    clamp(60px, 10vw, 150px);
+
+  line-height: 0.78;
+
+  font-weight: 900;
+
+  letter-spacing: -0.07em;
+}
+
+.channels-final h2 strong {
+  color: #777;
+}
+
+
+/* CTA BUTTON */
+
+.channels-final-button {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding:
+    15px 22px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  border:
+    1px solid #333;
+
+  background: #0b0b0b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.channels-final-button:hover {
+  background: #fff;
+
+  color: #000;
+
+  transform:
+    translateY(-5px);
+}
+/* =========================================
+   ADFICTION CHANNELS — RESPONSIVE ONLY
+   Desktop → Laptop → Tablet → Mobile
+========================================= */
+
+/* =========================================
+   LARGE DESKTOP
+   1600px+
+========================================= */
+
+@media (min-width: 1600px) {
+  .channels-hero {
+    min-height: 92vh;
+    padding: 150px 7vw 110px;
+  }
+
+  .channels-section {
+    padding: 150px 7vw 170px;
+  }
+
+  .channels-list {
+    max-width: 1600px;
+    gap: 45px;
+  }
+
+  .channel-card,
+  .channel-card-inner {
+    min-height: 680px;
+  }
+
+  .channel-card-inner {
+    padding: 42px;
+  }
+
+  .channel-logo-frame {
+    width: 190px;
+    height: 190px;
+  }
+
+  .channel-logo-area {
+    min-height: 250px;
+  }
+}
+
+
+/* =========================================
+   DESKTOP / LAPTOP
+   1200px – 1599px
+========================================= */
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .channels-hero {
+    min-height: 88vh;
+    padding: 135px 6vw 100px;
+  }
+
+  .channels-section {
+    padding: 120px 6vw 140px;
+  }
+
+  .channels-section-heading {
+    gap: 60px;
+  }
+
+  .channels-list {
+    gap: 30px;
+  }
+
+  .channel-card,
+  .channel-card-inner {
+    min-height: 600px;
+  }
+
+  .channel-card-inner {
+    padding: 32px;
+  }
+
+  .channel-logo-frame {
+    width: 165px;
+    height: 165px;
+  }
+}
+
+
+/* =========================================
+   SMALL LAPTOP
+   901px – 1199px
+========================================= */
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .channels-hero {
+    min-height: 85vh;
+    padding: 125px 5vw 90px;
+  }
+
+  .channels-hero h1 {
+    font-size: clamp(70px, 12vw, 150px);
+  }
+
+  .channels-hero p {
+    margin-top: 38px;
+  }
+
+  .channels-section {
+    padding: 110px 5vw 130px;
+  }
+
+  .channels-section-heading {
+    grid-template-columns: 1fr 0.75fr;
+    gap: 45px;
+    margin-bottom: 70px;
+  }
+
+  .channels-section-heading h2 {
+    font-size: clamp(48px, 6vw, 80px);
+  }
+
+  .channels-list {
+    gap: 25px;
+  }
+
+  .channel-card,
+  .channel-card-inner {
+    min-height: 560px;
+  }
+
+  .channel-card-inner {
+    padding: 28px;
+  }
+
+  .channel-number {
+    top: -16px;
+    left: 20px;
+    font-size: 65px;
+  }
+
+  .channel-logo-area {
+    min-height: 205px;
+  }
+
+  .channel-logo-glow {
+    width: 200px;
+    height: 200px;
+  }
+
+  .channel-logo-frame {
+    width: 145px;
+    height: 145px;
+  }
+
+  .channel-info h3 {
+    font-size: clamp(35px, 4vw, 55px);
+  }
+
+  .channels-final {
+    min-height: 75vh;
+    padding: 110px 5vw;
+  }
+
+  .channels-final h2 {
+    font-size: clamp(60px, 9vw, 120px);
+  }
+}
+
+
+/* =========================================
+   TABLET
+   769px – 900px
+========================================= */
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .channels-hero {
+    min-height: 82vh;
+    padding: 120px 6vw 90px;
+  }
+
+  .channels-hero h1 {
+    font-size: clamp(65px, 13vw, 120px);
+  }
+
+  .channels-hero p {
+    margin-top: 35px;
+    font-size: 12px;
+  }
+
+  .channels-grid {
+    background-size: 65px 65px;
+  }
+
+  .channels-orbit {
+    transform:
+      translate(-50%, -50%)
+      scale(0.8);
+  }
+
+  .channels-section {
+    padding: 100px 6vw 120px;
+  }
+
+  .channels-section-heading {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 65px;
+  }
+
+  .channels-section-heading h2 {
+    font-size: clamp(50px, 10vw, 85px);
+  }
+
+  .channels-section-heading p {
+    max-width: 600px;
+  }
+
+  .channels-list {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    gap: 30px;
+  }
+
+  .channel-card,
+  .channel-card-inner {
+    min-height: 570px;
+  }
+
+  .channel-card-inner {
+    padding: 30px;
+  }
+
+  .channel-number {
+    top: -15px;
+    left: 20px;
+    font-size: 70px;
+  }
+
+  .channel-logo-area {
+    min-height: 210px;
+  }
+
+  .channel-logo-frame {
+    width: 155px;
+    height: 155px;
+  }
+
+  .channel-info h3 {
+    font-size: clamp(40px, 8vw, 60px);
+  }
+
+  .channels-final {
+    min-height: 70vh;
+    padding: 100px 6vw;
+  }
+
+  .channels-final h2 {
+    font-size: clamp(55px, 11vw, 100px);
+  }
+}
+
+
+/* =========================================
+   MOBILE LARGE
+   601px – 768px
+========================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .channels-hero {
+    min-height: 78vh;
+    padding: 110px 35px 80px;
+  }
+
+  .channels-hero h1 {
+    font-size: clamp(60px, 15vw, 110px);
+    line-height: 0.82;
+  }
+
+  .channels-hero h1 span {
+    transform: none;
+  }
+
+  .channels-hero p {
+    margin-top: 30px;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .channels-grid {
+    background-size: 55px 55px;
+  }
+
+  .channels-hero::before {
+    width: 500px;
+    height: 500px;
+  }
+
+  .channels-orbit {
+    opacity: 0.45;
+  }
+
+  .orbit-one {
+    width: 550px;
+    height: 220px;
+  }
+
+  .orbit-two {
+    width: 720px;
+    height: 300px;
+  }
+
+  .channels-scroll {
+    bottom: 25px;
+  }
+
+  .channels-section {
+    padding: 85px 35px 100px;
+  }
+
+  .channels-section-heading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 55px;
+  }
+
+  .channels-section-heading h2 {
+    font-size: clamp(48px, 12vw, 75px);
+  }
+
+  .channels-section-heading p {
+    max-width: 520px;
+    font-size: 12px;
+  }
+
+  .channels-list {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    gap: 28px;
+  }
+
+  .channel-card,
+  .channel-card-inner {
+    min-height: 540px;
+  }
+
+  .channel-card-inner {
+    padding: 28px;
+  }
+
+  .channel-number {
+    top: -13px;
+    left: 17px;
+    font-size: 60px;
+  }
+
+  .channel-logo-area {
+    min-height: 190px;
+  }
+
+  .channel-logo-glow {
+    width: 190px;
+    height: 190px;
+  }
+
+  .channel-logo-frame {
+    width: 140px;
+    height: 140px;
+  }
+
+  .channel-info h3 {
+    font-size: clamp(38px, 9vw, 55px);
+  }
+
+  .channel-info p {
+    font-size: 11px;
+  }
+
+  .channels-final {
+    min-height: 65vh;
+    padding: 90px 35px;
+  }
+
+  .channels-final::before {
+    width: 450px;
+    height: 450px;
+  }
+
+  .channels-final h2 {
+    font-size: clamp(50px, 13vw, 90px);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   481px – 600px
+========================================= */
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .channels-hero {
+    min-height: 78vh;
+    padding: 105px 25px 75px;
+  }
+
+  .channels-hero h1 {
+    font-size: clamp(55px, 17vw, 95px);
+    line-height: 0.8;
+  }
+
+  .channels-hero h1 span {
+    transform: none;
+  }
+
+  .channels-hero p {
+    margin-top: 28px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+
+  .channels-grid {
+    background-size: 50px 50px;
+  }
+
+  .channels-hero::before {
+    width: 420px;
+    height: 420px;
+  }
+
+  .channels-orbit {
+    opacity: 0.4;
+  }
+
+  .orbit-one {
+    width: 470px;
+    height: 190px;
+  }
+
+  .orbit-two {
+    width: 620px;
+    height: 255px;
+  }
+
+  .channels-scroll {
+    bottom: 22px;
+  }
+
+  .channels-scroll span {
+    font-size: 7px;
+  }
+
+  .channels-scroll div {
+    height: 35px;
+  }
+
+  .channels-section {
+    padding: 75px 25px 90px;
+  }
+
+  .channels-section-heading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+
+  .channels-section-heading h2 {
+    font-size: clamp(44px, 14vw, 70px);
+  }
+
+  .channels-section-heading p {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .channels-list {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .channel-card,
+  .channel-card-inner {
+    min-height: 500px;
+  }
+
+  .channel-card-inner {
+    padding: 24px;
+  }
+
+  .channel-number {
+    top: -11px;
+    left: 13px;
+    font-size: 52px;
+  }
+
+  .channel-card-top span,
+  .channel-card-footer > span {
+    font-size: 7px;
+  }
+
+  .channel-card-top svg {
+    font-size: 19px;
+  }
+
+  .channel-logo-area {
+    min-height: 170px;
+  }
+
+  .channel-logo-glow {
+    width: 175px;
+    height: 175px;
+  }
+
+  .channel-logo-frame {
+    width: 125px;
+    height: 125px;
+  }
+
+  .channel-info h3 {
+    font-size: clamp(32px, 10vw, 48px);
+  }
+
+  .channel-handle {
+    font-size: 8px;
+  }
+
+  .channel-info p {
+    font-size: 10px;
+    line-height: 1.65;
+  }
+
+  .channel-card-footer {
+    padding-top: 18px;
+  }
+
+  .channel-play {
+    width: 40px;
+    height: 40px;
+  }
+
+  .channel-play svg {
+    font-size: 16px;
+  }
+
+  .channels-final {
+    min-height: 65vh;
+    padding: 85px 25px;
+  }
+
+  .channels-final::before {
+    width: 380px;
+    height: 380px;
+  }
+
+  .channels-final h2 {
+    font-size: clamp(48px, 14vw, 82px);
+    margin: 25px 0 40px;
+  }
+
+  .channels-final-button {
+    padding: 13px 18px;
+    gap: 11px;
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================
+   MOBILE STANDARD
+   381px – 480px
+========================================= */
+
+@media (min-width: 381px) and (max-width: 480px) {
+  .channels-hero {
+    min-height: 76vh;
+    padding: 100px 20px 70px;
+  }
+
+  .channels-hero h1 {
+    font-size: clamp(50px, 18vw, 85px);
+    line-height: 0.82;
+    letter-spacing: -0.075em;
+  }
+
+  .channels-hero h1 span {
+    transform: none;
+  }
+
+  .channels-eyebrow {
+    margin-bottom: 22px;
+    font-size: 8px;
+    letter-spacing: 0.28em;
+  }
+
+  .channels-hero p {
+    margin-top: 26px;
+    font-size: 10px;
+    line-height: 1.7;
+  }
+
+  .channels-grid {
+    background-size: 45px 45px;
+  }
+
+  .channels-hero::before {
+    width: 360px;
+    height: 360px;
+  }
+
+  .channels-orbit {
+    opacity: 0.35;
+  }
+
+  .orbit-one {
+    width: 400px;
+    height: 165px;
+  }
+
+  .orbit-two {
+    width: 520px;
+    height: 215px;
+  }
+
+  .channels-scroll {
+    bottom: 18px;
+  }
+
+  .channels-scroll span {
+    font-size: 6px;
+  }
+
+  .channels-scroll div {
+    height: 30px;
+  }
+
+  .channels-section {
+    padding: 70px 20px 85px;
+  }
+
+  .channels-section-heading {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 48px;
+  }
+
+  .channels-section-heading span {
+    font-size: 7px;
+    letter-spacing: 0.25em;
+  }
+
+  .channels-section-heading h2 {
+    margin-top: 16px;
+    font-size: clamp(42px, 15vw, 68px);
+    line-height: 0.84;
+  }
+
+  .channels-section-heading p {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+
+  .channels-list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .channel-card,
+  .channel-card-inner {
+    min-height: 480px;
+  }
+
+  .channel-card-inner {
+    padding: 22px;
+  }
+
+  .channel-number {
+    top: -10px;
+    left: 12px;
+    font-size: 48px;
+  }
+
+  .channel-card-top span {
+    font-size: 6px;
+    letter-spacing: 0.2em;
+  }
+
+  .channel-card-top svg {
+    font-size: 18px;
+  }
+
+  .channel-logo-area {
+    min-height: 155px;
+  }
+
+  .channel-logo-glow {
+    width: 155px;
+    height: 155px;
+  }
+
+  .channel-logo-frame {
+    width: 115px;
+    height: 115px;
+  }
+
+  .channel-info h3 {
+    margin: 8px 0 12px;
+    font-size: clamp(30px, 10vw, 45px);
+  }
+
+  .channel-handle {
+    font-size: 7px;
+  }
+
+  .channel-info p {
+    max-width: 100%;
+    font-size: 9px;
+    line-height: 1.65;
+  }
+
+  .channel-card-footer {
+    padding-top: 16px;
+  }
+
+  .channel-card-footer > span {
+    font-size: 6px;
+  }
+
+  .channel-play {
+    width: 37px;
+    height: 37px;
+  }
+
+  .channel-play svg {
+    font-size: 15px;
+  }
+
+  .channels-final {
+    min-height: 62vh;
+    padding: 80px 20px;
+  }
+
+  .channels-final::before {
+    width: 330px;
+    height: 330px;
+  }
+
+  .channels-final > span {
+    font-size: 7px;
+    letter-spacing: 0.25em;
+  }
+
+  .channels-final h2 {
+    font-size: clamp(44px, 15vw, 78px);
+    margin: 25px 0 38px;
+  }
+
+  .channels-final-button {
+    padding: 12px 16px;
+    gap: 10px;
+    font-size: 7px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   320px – 380px
+========================================= */
+
+@media (max-width: 380px) {
+  .channels-hero {
+    min-height: 74vh;
+    padding: 90px 15px 65px;
+  }
+
+  .channels-hero h1 {
+    font-size: clamp(44px, 18vw, 75px);
+    line-height: 0.84;
+    letter-spacing: -0.075em;
+  }
+
+  .channels-eyebrow {
+    margin-bottom: 20px;
+    font-size: 7px;
+    letter-spacing: 0.25em;
+  }
+
+  .channels-hero p {
+    margin-top: 24px;
+    font-size: 9px;
+    line-height: 1.65;
+  }
+
+  .channels-grid {
+    background-size: 40px 40px;
+  }
+
+  .channels-hero::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .channels-orbit {
+    opacity: 0.3;
+  }
+
+  .orbit-one {
+    width: 340px;
+    height: 140px;
+  }
+
+  .orbit-two {
+    width: 440px;
+    height: 180px;
+  }
+
+  .channels-scroll {
+    bottom: 15px;
+  }
+
+  .channels-scroll span {
+    font-size: 5px;
+  }
+
+  .channels-scroll div {
+    height: 25px;
+  }
+
+  .channels-section {
+    padding: 60px 15px 75px;
+  }
+
+  .channels-section-heading {
+    gap: 20px;
+    margin-bottom: 42px;
+  }
+
+  .channels-section-heading span {
+    font-size: 6px;
+  }
+
+  .channels-section-heading h2 {
+    margin-top: 14px;
+    font-size: clamp(38px, 15vw, 60px);
+  }
+
+  .channels-section-heading p {
+    font-size: 9px;
+    line-height: 1.75;
+  }
+
+  .channels-list {
+    gap: 22px;
+  }
+
+  .channel-card,
+  .channel-card-inner {
+    min-height: 455px;
+  }
+
+  .channel-card-inner {
+    padding: 18px;
+  }
+
+  .channel-number {
+    top: -9px;
+    left: 9px;
+    font-size: 42px;
+  }
+
+  .channel-card-top span {
+    font-size: 5px;
+    letter-spacing: 0.17em;
+  }
+
+  .channel-card-top svg {
+    font-size: 16px;
+  }
+
+  .channel-logo-area {
+    min-height: 140px;
+  }
+
+  .channel-logo-glow {
+    width: 135px;
+    height: 135px;
+  }
+
+  .channel-logo-frame {
+    width: 100px;
+    height: 100px;
+  }
+
+  .channel-info h3 {
+    margin: 7px 0 10px;
+    font-size: clamp(28px, 10vw, 40px);
+  }
+
+  .channel-handle {
+    font-size: 6px;
+    letter-spacing: 0.15em;
+  }
+
+  .channel-info p {
+    font-size: 8px;
+    line-height: 1.6;
+  }
+
+  .channel-card-footer {
+    padding-top: 13px;
+  }
+
+  .channel-card-footer > span {
+    font-size: 5px;
+    letter-spacing: 0.18em;
+  }
+
+  .channel-play {
+    width: 34px;
+    height: 34px;
+  }
+
+  .channel-play svg {
+    font-size: 14px;
+  }
+
+  .channels-final {
+    min-height: 58vh;
+    padding: 70px 15px;
+  }
+
+  .channels-final::before {
+    width: 280px;
+    height: 280px;
+  }
+
+  .channels-final > span {
+    font-size: 6px;
+  }
+
+  .channels-final h2 {
+    font-size: clamp(40px, 15vw, 65px);
+    margin: 22px 0 32px;
+  }
+
+  .channels-final-button {
+    padding: 11px 14px;
+    gap: 8px;
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================
+   EXTRA SMALL DEVICES
+   Below 320px
+========================================= */
+
+@media (max-width: 319px) {
+  .channels-hero {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .channels-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .channels-hero h1 {
+    font-size: 42px;
+  }
+
+  .channels-section-heading h2 {
+    font-size: 36px;
+  }
+
+  .channel-card-inner {
+    padding: 16px;
+  }
+
+  .channel-card,
+  .channel-card-inner {
+    min-height: 430px;
+  }
+
+  .channel-logo-frame {
+    width: 90px;
+    height: 90px;
+  }
+
+  .channel-logo-glow {
+    width: 120px;
+    height: 120px;
+  }
+
+  .channel-info h3 {
+    font-size: 27px;
+  }
+
+  .channels-final h2 {
+    font-size: 37px;
+  }
+}
+
+
+/* =========================================
+   TOUCH DEVICES
+   Remove heavy 3D hover behavior
+========================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  .channel-card:hover .channel-card-inner {
+    transform: rotateX(1deg);
+    box-shadow:
+      10px 10px 0 #080808,
+      18px 18px 35px rgba(0, 0, 0, 0.8);
+  }
+
+  .channel-card:hover .channel-logo-frame {
+    transform: rotateY(0deg);
+  }
+
+  .channel-card:hover .channel-play {
+    transform: none;
+  }
+
+  .channel-card:hover .channel-card-top svg {
+    transform: none;
+  }
+}
+
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .channel-card-inner,
+  .channel-logo-frame,
+  .channel-play,
+  .channel-card-top svg,
+  .channels-final-button {
+    transition: none;
+  }
+
+  .channel-card:hover .channel-card-inner {
+    transform: none;
+  }
+
+  .channel-card:hover .channel-logo-frame {
+    transform: none;
+  }
+
+  .channel-card:hover .channel-play {
+    transform: none;
+  }
+}

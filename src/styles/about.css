@@ -1827,7 +1827,7 @@ background-repeat: no-repeat;
   }
 
   .philosophy-content h2 {
-    font-size: clamp(52px, 15vw, 90px);
+    font-size: clamp(52px, 14vw, 90px);
 
     line-height: 0.87;
 
@@ -2256,7 +2256,7 @@ background-repeat: no-repeat;
   .philosophy-content h2 {
     margin: 20px 0;
 
-    font-size: 16vw;
+    font-size: 14vw;
 
     letter-spacing: -3px;
   }
@@ -2277,7 +2277,7 @@ background-repeat: no-repeat;
   }
 
   .works-heading h2 {
-    font-size: 16vw;
+    font-size: 14vw;
 
     letter-spacing: -3px;
   }

@@ -104,12 +104,7 @@ function Hero() {
         </div>
 
       </div>
-
-      {/* SIDE TEXT */}
-      <div className="hero-side-text">
-        <span>EST.</span>
-        <span>2025</span>
-      </div>
+ 
 
       {/* SCROLL */}
       <div className="hero-scroll">
@@ -117,11 +112,7 @@ function Hero() {
         <FiArrowDown />
         <span>SCROLL TO EXPLORE</span>
       </div>
-
-      {/* NUMBER */}
-      <div className="hero-number">
-        01
-      </div>
+ 
 
     </section>
   );

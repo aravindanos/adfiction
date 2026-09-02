@@ -114,6 +114,15 @@ function Navbar() {
           <FiArrowUpRight />
         </Link>
 
+<Link
+          to="/favorites"
+          onClick={closeMenu}
+        >
+          <span className="nav-number">05</span>
+          <span>Favorites</span>
+          <FiArrowUpRight />
+        </Link>
+        
         <div className="mobile-menu-footer">
           <span>ADFICTION ORIGINALS</span>
           <span>EST. 2025</span>

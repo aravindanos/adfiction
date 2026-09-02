@@ -354,16 +354,19 @@
 
   align-items: center;
 
-  font-size: 8px;
+  font-size: 10px;
 
   letter-spacing: 2px;
 
-  color: #555;
+  color: #fff9f9;
 }
 
 .footer-bottom-center {
   text-align: center;
+
 }
+
+
 
 /* =====================================================
    BACK TO TOP

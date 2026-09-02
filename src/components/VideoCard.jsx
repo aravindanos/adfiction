@@ -11,39 +11,32 @@ import "../styles/cards.css";
 function VideoCard({ video }) {
   const cardRef = useRef(null);
 
-  const [imageLoaded, setImageLoaded] =
-    useState(false);
-
-  const [isFavorite, setIsFavorite] =
-    useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const thumbnail =
     `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`;
 
+  // Load favorite status
   useEffect(() => {
     try {
       const saved =
         JSON.parse(
-          localStorage.getItem(
-            "adfiction-favorites"
-          )
+          localStorage.getItem("adfiction-favorites")
         ) || [];
 
-      setIsFavorite(
-        saved.includes(video.id)
-      );
+      setIsFavorite(saved.includes(video.id));
     } catch {
       setIsFavorite(false);
     }
   }, [video.id]);
 
+  // 3D mouse movement
   const handleMouseMove = (event) => {
     if (!cardRef.current) return;
 
     if (
-      window.matchMedia(
-        "(pointer: coarse)"
-      ).matches
+      window.matchMedia("(pointer: coarse)").matches
     ) {
       return;
     }
@@ -78,10 +71,10 @@ function VideoCard({ video }) {
   const handleMouseLeave = () => {
     if (!cardRef.current) return;
 
-    cardRef.current.style.transform =
-      "";
+    cardRef.current.style.transform = "";
   };
 
+  // Favorite button
   const toggleFavorite = (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -89,18 +82,18 @@ function VideoCard({ video }) {
     try {
       const saved =
         JSON.parse(
-          localStorage.getItem(
-            "adfiction-favorites"
-          )
+          localStorage.getItem("adfiction-favorites")
         ) || [];
 
       let updated;
 
       if (saved.includes(video.id)) {
+        // Remove favorite
         updated = saved.filter(
           (id) => id !== video.id
         );
       } else {
+        // Add favorite
         updated = [
           ...saved,
           video.id,
@@ -116,7 +109,9 @@ function VideoCard({ video }) {
         updated.includes(video.id)
       );
     } catch {
-      // Ignore localStorage errors.
+      console.error(
+        "Unable to save favorite"
+      );
     }
   };
 
@@ -129,6 +124,7 @@ function VideoCard({ video }) {
       onMouseLeave={handleMouseLeave}
     >
       <div className="video-card-image">
+
         {!imageLoaded && (
           <div className="thumbnail-loading">
             Loading...
@@ -138,9 +134,7 @@ function VideoCard({ video }) {
         <img
           src={thumbnail}
           alt={video.title}
-          onLoad={() =>
-            setImageLoaded(true)
-          }
+          onLoad={() => setImageLoaded(true)}
           onError={(event) => {
             event.currentTarget.src =
               `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
@@ -153,6 +147,7 @@ function VideoCard({ video }) {
           <FiPlay />
         </div>
 
+        {/* FAVORITE BUTTON */}
         <button
           className={
             isFavorite
@@ -174,6 +169,7 @@ function VideoCard({ video }) {
         </button>
 
         <div className="video-card-info">
+
           <span className="video-category">
             {video.category}
           </span>
@@ -185,7 +181,9 @@ function VideoCard({ video }) {
             <span>•</span>
             <span>{video.genre}</span>
           </div>
+
         </div>
+
       </div>
     </Link>
   );
