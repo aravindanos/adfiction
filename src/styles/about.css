@@ -1198,62 +1198,345 @@ background-repeat: no-repeat;
   pointer-events: none;
 }
 
-
 /* =====================================================
-   TABLET
+   RESPONSIVE SYSTEM
+   ALL DEVICES
 ===================================================== */
 
-@media (max-width: 1000px) {
+/* =====================================================
+   LARGE TABLET / SMALL LAPTOP
+   1200px
+===================================================== */
 
-  .creative-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1200px) {
+
+  .about-hero {
+    padding: 120px 6vw;
+  }
+
+  .about-hero-title {
+    font-size: clamp(80px, 14vw, 190px);
+  }
+
+  .about-hero-number {
+    right: 5vw;
+    font-size: 120px;
+  }
+
+  .about-intro,
+  .about-creative,
+  .about-head,
+  .about-works {
+    width: 88%;
+  }
+
+  .about-intro {
+    gap: 70px;
+  }
+
+  .creative-card {
+    padding: 25px;
   }
 
   .head-layout {
-    grid-template-columns: 1fr;
-
-    gap: 80px;
-  }
-
-  .head-visual {
-    max-width: 600px;
+    gap: 70px;
   }
 
   .about-philosophy {
-    flex-direction: column;
-
-    align-items: flex-start;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    gap: 8vw;
   }
 
-  .philosophy-circle {
-    width: 350px;
-    height: 350px;
+  .about-final {
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
-
-  .philosophy-circle-inner {
-    width: 230px;
-    height: 230px;
-  }
-
 }
 
 
 /* =====================================================
-   MOBILE
+   TABLET
+   1024px
 ===================================================== */
 
-@media (max-width: 650px) {
+@media (max-width: 1024px) {
+
+  /* ---------- HERO ---------- */
 
   .about-hero {
     min-height: 90vh;
-
-    padding: 110px 7vw;
+    padding: 120px 7vw;
   }
 
   .about-hero-title {
+    font-size: clamp(75px, 13vw, 150px);
+    letter-spacing: -8px;
+  }
+
+  .about-hero-title span {
+    margin-left: 5vw;
+  }
+
+  .about-hero-number {
+    right: 6vw;
+    font-size: 100px;
+  }
+
+  .about-orbit {
+    opacity: 0.7;
+  }
+
+  .orbit-one {
+    width: 500px;
+    height: 500px;
+    right: -150px;
+  }
+
+  .orbit-two {
+    width: 350px;
+    height: 350px;
+    right: -30px;
+  }
+
+
+  /* ---------- INTRO ---------- */
+
+  .about-intro {
+    width: 88%;
+    padding: 120px 0;
+
+    grid-template-columns: 0.7fr 2fr;
+
+    gap: 60px;
+  }
+
+  .about-intro-content h2 {
+    font-size: clamp(55px, 8vw, 90px);
+    letter-spacing: -5px;
+  }
+
+
+  /* ---------- CREATIVE ---------- */
+
+  .about-creative {
+    width: 88%;
+    padding: 90px 0 120px;
+  }
+
+  .creative-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .creative-card {
+    min-height: 350px;
+  }
+
+
+  /* ---------- HEAD ---------- */
+
+  .about-head {
+    width: 88%;
+    padding: 120px 0;
+  }
+
+  .head-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .head-content h2 {
+    font-size: clamp(55px, 8vw, 85px);
+    letter-spacing: -5px;
+  }
+
+  .head-background-text {
     font-size: 20vw;
+  }
+
+
+  /* ---------- PHILOSOPHY ---------- */
+
+  .about-philosophy {
+    min-height: 650px;
+    padding: 120px 7vw;
+
+    gap: 8vw;
+  }
+
+  .philosophy-circle {
+    width: 380px;
+    height: 380px;
+  }
+
+  .philosophy-circle-inner {
+    width: 250px;
+    height: 250px;
+  }
+
+
+  /* ---------- WORKS ---------- */
+
+  .about-works {
+    width: 88%;
+    padding: 120px 0;
+  }
+
+  .works-heading h2 {
+    font-size: clamp(65px, 9vw, 100px);
+  }
+
+
+  /* ---------- FINAL ---------- */
+
+  .about-final {
+    min-height: 680px;
+    padding: 120px 7vw;
+  }
+
+  .about-final h2 {
+    font-size: clamp(65px, 10vw, 120px);
+  }
+
+
+  /* ---------- BACK BUTTON ---------- */
+
+  .about-back-home {
+    top: 100px;
+    right: 25px;
+  }
+}
+
+
+/* =====================================================
+   TABLET PORTRAIT
+   900px
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .about-hero-title {
+    font-size: 13vw;
+  }
+
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .about-intro-content {
+    max-width: 850px;
+  }
+
+  .head-layout {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .head-visual {
+    width: 75%;
+    max-width: 600px;
+  }
+
+  .head-content {
+    max-width: 750px;
+  }
+
+  .about-philosophy {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 90px;
+  }
+
+  .philosophy-circle {
+    align-self: center;
+  }
+}
+
+
+/* =====================================================
+   LARGE MOBILE
+   768px
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* ---------- GLOBAL ---------- */
+
+  .about-page {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .about-section-label {
+    gap: 10px;
+    font-size: 8px;
+    letter-spacing: 2.5px;
+  }
+
+
+  /* ---------- BACK HOME ---------- */
+
+  .about-back-home {
+    top: 88px;
+    right: 18px;
+
+    padding: 8px 12px 8px 8px;
+
+    gap: 9px;
+
+    transform: none;
+  }
+
+  .about-back-home:hover {
+    transform: translateX(3px);
+  }
+
+  .back-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .back-icon svg {
+    font-size: 15px;
+  }
+
+  .back-text {
+    font-size: 8px;
+    letter-spacing: 0.13em;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .about-hero {
+    min-height: 88vh;
+
+    padding: 110px 7vw 90px;
+
+    align-items: center;
+  }
+
+  .about-hero-content {
+    width: 100%;
+  }
+
+  .about-eyebrow {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .about-hero-title {
+    margin-top: 22px;
+
+    font-size: clamp(58px, 14vw, 105px);
+
+    line-height: 0.82;
 
     letter-spacing: -5px;
+
+    word-break: normal;
   }
 
   .about-hero-title span {
@@ -1261,59 +1544,120 @@ background-repeat: no-repeat;
   }
 
   .about-hero-subtitle {
+    margin-top: 35px;
+
     font-size: 8px;
 
     letter-spacing: 3px;
 
-    margin-top: 35px;
+    line-height: 1.5;
   }
 
   .about-hero-number {
-    font-size: 80px;
+    top: auto;
+    bottom: 70px;
+    right: 7vw;
 
-    right: 5vw;
+    font-size: 65px;
   }
 
+  .about-scroll {
+    bottom: 25px;
+    left: 7vw;
+
+    gap: 10px;
+
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+
+  .about-scroll div {
+    width: 45px;
+  }
+
+
+  /* ---------- ORBITS ---------- */
+
   .about-orbit {
-    opacity: .4;
+    opacity: 0.35;
   }
 
   .orbit-one {
-    width: 350px;
-    height: 350px;
+    width: 360px;
+    height: 360px;
 
-    right: -150px;
+    right: -180px;
+    top: 20%;
   }
 
   .orbit-two {
-    width: 260px;
-    height: 260px;
+    width: 270px;
+    height: 270px;
 
-    right: -100px;
+    right: -110px;
+    top: 30%;
   }
 
-  .about-intro,
-  .about-creative,
-  .about-head,
-  .about-works {
-    width: 86%;
+
+  /* ---------- GRID ---------- */
+
+  .about-grid {
+    background-size: 55px 55px;
+
+    transform:
+      perspective(600px)
+      rotateX(65deg)
+      translateY(200px)
+      scale(1.4);
   }
+
+
+  /* ---------- INTRO ---------- */
 
   .about-intro {
-    padding: 100px 0;
+    width: 86%;
+
+    padding: 90px 0;
 
     grid-template-columns: 1fr;
 
-    gap: 50px;
+    gap: 45px;
   }
 
   .about-intro-content h2 {
-    font-size: 14vw;
+    font-size: clamp(48px, 13vw, 80px);
 
-    letter-spacing: -3px;
+    line-height: 0.9;
+
+    letter-spacing: -4px;
   }
 
+  .about-intro-content > p {
+    max-width: 100%;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+    margin-top: 25px;
+  }
+
+  .about-statement {
+    margin-top: 50px;
+
+    padding-left: 18px;
+  }
+
+  .about-statement strong {
+    font-size: clamp(28px, 8vw, 45px);
+  }
+
+
+  /* ---------- CREATIVE ---------- */
+
   .about-creative {
+    width: 86%;
+
     padding: 70px 0 100px;
   }
 
@@ -1322,29 +1666,89 @@ background-repeat: no-repeat;
   }
 
   .creative-intro h2 {
-    font-size: 14vw;
+    font-size: clamp(48px, 13vw, 80px);
 
-    letter-spacing: -3px;
+    line-height: 0.88;
+
+    letter-spacing: -4px;
   }
 
   .creative-grid {
     grid-template-columns: 1fr;
+
+    gap: 14px;
   }
 
   .creative-card {
     min-height: 320px;
+
+    padding: 25px;
   }
 
+  .creative-card-number {
+    right: 20px;
+    top: 20px;
+
+    font-size: 28px;
+  }
+
+  .creative-icon {
+    margin-top: 80px;
+
+    font-size: 32px;
+  }
+
+  .creative-card h3 {
+    margin: 20px 0 12px;
+
+    font-size: 22px;
+  }
+
+  .creative-card p {
+    max-width: 500px;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+  }
+
+  .creative-card-line {
+    left: 25px;
+    right: 25px;
+    bottom: 20px;
+  }
+
+
+  /* ---------- HEAD ---------- */
+
   .about-head {
-    padding: 100px 0;
+    width: 86%;
+
+    padding: 90px 0;
   }
 
   .head-layout {
-    margin-top: 60px;
+    margin-top: 55px;
+
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .head-visual {
+    width: 100%;
+
+    max-width: 550px;
+
+    margin: auto;
   }
 
   .head-frame {
     transform: none;
+  }
+
+  .head-frame:hover {
+    transform: translateY(-5px);
   }
 
   .head-vertical-text {
@@ -1352,7 +1756,9 @@ background-repeat: no-repeat;
   }
 
   .head-content h2 {
-    font-size: 18vw;
+    font-size: clamp(55px, 16vw, 100px);
+
+    line-height: 0.82;
 
     letter-spacing: -5px;
   }
@@ -1361,22 +1767,47 @@ background-repeat: no-repeat;
     margin-left: 25px;
   }
 
+  .head-line {
+    margin: 30px 0;
+  }
+
   .head-quote {
     font-size: 17px;
+
+    line-height: 1.55;
+  }
+
+  .head-content > p:not(.head-quote) {
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin-top: 20px;
+  }
+
+  .head-signature {
+    margin-top: 35px;
   }
 
   .head-background-text {
+    top: 150px;
+
+    right: -15%;
+
     font-size: 30vw;
 
-    top: 160px;
+    letter-spacing: -8px;
   }
+
+
+  /* ---------- PHILOSOPHY ---------- */
 
   .about-philosophy {
     min-height: auto;
 
-    padding: 100px 7vw;
+    padding: 90px 7vw;
 
-    gap: 80px;
+    gap: 75px;
   }
 
   .philosophy-circle {
@@ -1391,85 +1822,693 @@ background-repeat: no-repeat;
     height: 190px;
 
     font-size: 13px;
+
+    letter-spacing: 3px;
   }
 
   .philosophy-content h2 {
-    font-size: 17vw;
+    font-size: clamp(52px, 15vw, 90px);
+
+    line-height: 0.87;
 
     letter-spacing: -4px;
   }
 
+  .philosophy-content p {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+
+  /* ---------- WORKS ---------- */
+
   .about-works {
-    padding: 100px 0;
+    width: 86%;
+
+    padding: 90px 0;
   }
 
   .works-heading {
+    margin: 40px 0;
+
     align-items: flex-start;
 
     flex-direction: column;
 
-    gap: 30px;
+    gap: 25px;
   }
 
   .works-heading h2 {
-    font-size: 17vw;
+    font-size: clamp(52px, 16vw, 95px);
 
-    letter-spacing: -4px;
+    line-height: 0.82;
+
+    letter-spacing: -5px;
+  }
+
+  .works-heading a {
+    font-size: 8px;
   }
 
   .work-item {
-    min-height: 90px;
+    min-height: 85px;
 
-    grid-template-columns: 35px 1fr 25px;
+    grid-template-columns:
+      35px
+      minmax(0, 1fr)
+      30px;
+
+    gap: 12px;
+  }
+
+  .work-item > span {
+    font-size: 9px;
+  }
+
+  .work-item h3 {
+    font-size: 13px;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.5px;
   }
 
   .work-item p {
     display: none;
   }
 
-  .work-item h3 {
-    font-size: 13px;
+  .work-item svg {
+    font-size: 16px;
   }
 
-  .about-final {
-    min-height: 650px;
+  .work-item:hover {
+    padding: 0 10px;
+  }
 
-    padding: 100px 7vw;
+
+  /* ---------- FINAL CTA ---------- */
+
+  .about-final {
+    min-height: 600px;
+
+    padding: 90px 7vw;
+  }
+
+  .about-final > span {
+    font-size: 8px;
+
+    letter-spacing: 3px;
   }
 
   .about-final h2 {
-    font-size: 17vw;
+    margin: 30px 0;
+
+    font-size: clamp(52px, 16vw, 95px);
+
+    line-height: 0.82;
 
     letter-spacing: -5px;
   }
 
-  .final-3d-text {
-    bottom: -20px;
+  .about-final p {
+    font-size: 12px;
+  }
 
-    font-size: 27vw;
+  .final-button {
+    margin-top: 25px;
+
+    padding: 15px 20px;
+
+    gap: 18px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+  .final-button svg {
+    font-size: 15px;
+  }
+
+  .final-3d-text {
+    bottom: -15px;
+
+    font-size: 28vw;
 
     letter-spacing: -7px;
   }
+}
 
+
+/* =====================================================
+   MOBILE
+   600px
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .about-hero-title {
+    font-size: 14.5vw;
+  }
+
+  .about-hero-number {
+    display: none;
+  }
+
+  .about-scroll {
+    left: 7vw;
+  }
+
+  .head-frame {
+    padding: 10px;
+  }
+
+  .head-placeholder {
+    font-size: 35px;
+  }
+
+  .head-placeholder-small {
+    font-size: 7px;
+  }
+
+  .philosophy-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .philosophy-circle-inner {
+    width: 170px;
+    height: 170px;
+  }
 }
 
 
 /* =====================================================
    SMALL MOBILE
+   480px
 ===================================================== */
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
+
+  /* ---------- BACK BUTTON ---------- */
+
+  .about-back-home {
+    top: 82px;
+    right: 12px;
+
+    padding: 7px 10px 7px 7px;
+
+    gap: 7px;
+  }
+
+  .back-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .back-icon svg {
+    font-size: 14px;
+  }
+
+  .back-text {
+    font-size: 7px;
+
+    letter-spacing: 0.1em;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .about-hero {
+    min-height: 82vh;
+
+    padding: 100px 7vw 75px;
+  }
+
+  .about-eyebrow {
+    font-size: 7px;
+
+    letter-spacing: 2.5px;
+  }
 
   .about-hero-title {
-    font-size: 19vw;
+    margin-top: 18px;
+
+    font-size: 14.5vw;
+
+    letter-spacing: -4px;
+  }
+
+  .about-hero-subtitle {
+    margin-top: 28px;
+
+    font-size: 7px;
+
+    letter-spacing: 2.5px;
+  }
+
+  .about-scroll {
+    bottom: 20px;
+
+    font-size: 6px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .about-scroll div {
+    width: 35px;
+  }
+
+
+  /* ---------- INTRO ---------- */
+
+  .about-intro {
+    padding: 75px 0;
+  }
+
+  .about-intro-content h2 {
+    font-size: 13.5vw;
+
+    letter-spacing: -3px;
+  }
+
+  .about-intro-content > p {
+    font-size: 13px;
+
+    line-height: 1.75;
+
+    margin-top: 22px;
+  }
+
+  .about-statement {
+    margin-top: 40px;
+
+    padding-left: 15px;
+  }
+
+  .about-statement span {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+  .about-statement strong {
+    font-size: 9vw;
+
+    letter-spacing: -1px;
+  }
+
+
+  /* ---------- CREATIVE ---------- */
+
+  .about-creative {
+    padding: 60px 0 80px;
+  }
+
+  .creative-intro {
+    margin: 30px 0;
+  }
+
+  .creative-intro h2 {
+    font-size: 13.5vw;
+
+    letter-spacing: -3px;
   }
 
   .creative-card {
-    min-height: 300px;
+    min-height: 290px;
+
+    padding: 22px;
+  }
+
+  .creative-card-number {
+    right: 18px;
+    top: 18px;
+
+    font-size: 25px;
+  }
+
+  .creative-icon {
+    margin-top: 70px;
+
+    font-size: 29px;
+  }
+
+  .creative-card h3 {
+    font-size: 20px;
+
+    margin: 17px 0 10px;
+  }
+
+  .creative-card p {
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+  .creative-card-line {
+    left: 22px;
+    right: 22px;
+    bottom: 18px;
+  }
+
+
+  /* ---------- HEAD ---------- */
+
+  .about-head {
+    padding: 75px 0;
+  }
+
+  .head-layout {
+    margin-top: 45px;
+
+    gap: 45px;
   }
 
   .head-content h2 {
     font-size: 17vw;
+
+    letter-spacing: -4px;
   }
 
+  .head-content h2 span {
+    margin-left: 20px;
+  }
+
+  .head-quote {
+    font-size: 16px;
+  }
+
+  .head-content > p:not(.head-quote) {
+    font-size: 12px;
+
+    line-height: 1.8;
+  }
+
+  .head-signature {
+    margin-top: 30px;
+  }
+
+  .head-signature strong {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+  }
+
+  .head-background-text {
+    top: 125px;
+
+    font-size: 31vw;
+
+    letter-spacing: -6px;
+  }
+
+
+  /* ---------- PHILOSOPHY ---------- */
+
+  .about-philosophy {
+    padding: 75px 7vw;
+
+    gap: 60px;
+  }
+
+  .philosophy-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .philosophy-circle-inner {
+    width: 150px;
+    height: 150px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .philosophy-content span {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+  .philosophy-content h2 {
+    margin: 20px 0;
+
+    font-size: 16vw;
+
+    letter-spacing: -3px;
+  }
+
+  .philosophy-content p {
+    font-size: 12px;
+  }
+
+
+  /* ---------- WORKS ---------- */
+
+  .about-works {
+    padding: 75px 0;
+  }
+
+  .works-heading {
+    margin: 35px 0;
+  }
+
+  .works-heading h2 {
+    font-size: 16vw;
+
+    letter-spacing: -3px;
+  }
+
+  .work-item {
+    min-height: 75px;
+
+    grid-template-columns:
+      28px
+      minmax(0, 1fr)
+      25px;
+
+    gap: 8px;
+  }
+
+  .work-item h3 {
+    font-size: 11px;
+
+    line-height: 1.25;
+  }
+
+  .work-item > span {
+    font-size: 8px;
+  }
+
+  .work-item svg {
+    font-size: 14px;
+  }
+
+
+  /* ---------- FINAL ---------- */
+
+  .about-final {
+    min-height: 550px;
+
+    padding: 80px 7vw;
+  }
+
+  .about-final > span {
+    font-size: 7px;
+
+    letter-spacing: 2.5px;
+  }
+
+  .about-final h2 {
+    margin: 25px 0;
+
+    font-size: 16vw;
+
+    letter-spacing: -4px;
+  }
+
+  .about-final p {
+    font-size: 11px;
+  }
+
+  .final-button {
+    padding: 13px 16px;
+
+    gap: 15px;
+
+    font-size: 7px;
+  }
+
+  .final-button svg {
+    font-size: 14px;
+  }
+
+  .final-3d-text {
+    bottom: -5px;
+
+    font-size: 29vw;
+
+    letter-spacing: -5px;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+   380px
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .about-hero {
+    min-height: 78vh;
+  }
+
+  .about-hero-title {
+    font-size: 14vw;
+
+    letter-spacing: -3px;
+  }
+
+  .about-hero-subtitle {
+    font-size: 6px;
+
+    letter-spacing: 2px;
+  }
+
+  .about-intro-content h2 {
+    font-size: 13vw;
+
+    letter-spacing: -2px;
+  }
+
+  .creative-card {
+    min-height: 275px;
+
+    padding: 20px;
+  }
+
+  .creative-icon {
+    margin-top: 65px;
+
+    font-size: 27px;
+  }
+
+  .head-content h2 {
+    font-size: 16vw;
+
+    letter-spacing: -3px;
+  }
+
+  .head-quote {
+    font-size: 15px;
+  }
+
+  .philosophy-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .philosophy-circle-inner {
+    width: 135px;
+    height: 135px;
+
+    font-size: 10px;
+  }
+
+  .work-item {
+    min-height: 70px;
+  }
+
+  .work-item h3 {
+    font-size: 10px;
+  }
+
+  .about-final {
+    min-height: 500px;
+  }
+}
+
+
+/* =====================================================
+   EXTRA SMALL DEVICES
+   320px
+===================================================== */
+
+@media (max-width: 320px) {
+
+  .about-hero {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .about-hero-title {
+    font-size: 13.5vw;
+
+    letter-spacing: -2px;
+  }
+
+  .about-hero-subtitle {
+    font-size: 5.5px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .about-section-label {
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+
+  .about-intro,
+  .about-creative,
+  .about-head,
+  .about-works {
+    width: 88%;
+  }
+
+  .creative-card {
+    min-height: 260px;
+
+    padding: 18px;
+  }
+
+  .creative-card h3 {
+    font-size: 18px;
+  }
+
+  .creative-card p {
+    font-size: 10px;
+  }
+
+  .head-content h2 {
+    font-size: 15.5vw;
+  }
+
+  .philosophy-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .philosophy-circle-inner {
+    width: 120px;
+    height: 120px;
+
+    font-size: 9px;
+  }
+
+  .works-heading h2 {
+    font-size: 15vw;
+  }
+
+  .work-item h3 {
+    font-size: 9px;
+  }
+
+  .about-final h2 {
+    font-size: 15vw;
+  }
 }

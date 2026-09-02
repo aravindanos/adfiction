@@ -174,7 +174,7 @@
 }
 
 .watch-brand {
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   letter-spacing: 5px;
   font-weight: 700;
@@ -289,6 +289,40 @@
     rgba(255, 255, 255, 0.08);
 }
 
+.watch-info h1 {
+  font-size: 45px !important;
+  line-height: 1.1;
+}
+
+@media (max-width: 1200px) {
+  .watch-info h1 {
+    font-size: 40px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .watch-info h1 {
+    font-size: 36px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .watch-info h1 {
+    font-size: 32px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .watch-info h1 {
+    font-size: 27px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .watch-info h1 {
+    font-size: 24px !important;
+  }
+}
 .watch-main-info {
   max-width: 760px;
 }
@@ -322,7 +356,7 @@
 .watch-main-info h1 {
   margin: 12px 0 14px;
 
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", sans-serif;
 
   font-size: clamp(42px, 6vw, 82px);
 
@@ -615,7 +649,7 @@
 .related-header h2 {
   margin: 0;
 
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", sans-serif;
 
   font-size: clamp(30px, 4vw, 48px);
 
@@ -694,7 +728,7 @@
 
   color: rgba(255, 255, 255, 0.8);
 
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", sans-serif;
 
   letter-spacing: 3px;
 }
@@ -764,7 +798,7 @@
 .watch-not-found h1 {
   margin: 0 0 25px;
 
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", sans-serif;
 
   font-size: 50px;
 }

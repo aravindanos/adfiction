@@ -84,7 +84,7 @@
 .loader-content h1 {
   margin: 0;
 
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", sans-serif;
 
   font-size: clamp(35px, 7vw, 75px);
 

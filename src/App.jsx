@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import CinematicLoader from "./components/CinematicLoader";
 import CinematicEffects from "./components/CinematicEffects";
-
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Watch from "./pages/Watch";
 import ShortFilms from "./pages/ShortFilms";
@@ -16,6 +16,7 @@ function AnimatedRoutes() {
 
   return (
     <AnimatePresence mode="wait">
+      <ScrollToTop />
       <motion.div
         key={location.pathname}
         initial={{
