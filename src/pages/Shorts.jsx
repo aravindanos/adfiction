@@ -19,7 +19,7 @@ function Shorts() {
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [muted, setMuted] = useState(true);
+const [muted, setMuted] = useState(false);
   const [paused, setPaused] = useState(false);
   const [favorites, setFavorites] = useState([]);
 
@@ -265,51 +265,48 @@ function Shorts() {
         ref={containerRef}
       >
 
-        {shorts.map((video, index) => {
+       {shorts.map((video, index) => {
+  const isActive = index === activeIndex;
+  const isPaused = isActive && paused;
 
-          const isActive =
-            index === activeIndex;
+  const shouldLoad =
+    index === activeIndex ||
+    index === activeIndex + 1 ||
+    index === activeIndex - 1;
 
-          const isPaused =
-            isActive && paused;
+  return (
+    <section
+      className="short-slide"
+      key={video.id}
+    >
+      <div className="short-video-wrap">
 
-          return (
-            <section
-              className="short-slide"
-              key={video.id}
-            >
+        {shouldLoad ? (
+          <iframe
+            key={video.id}
+            className="short-video"
+            src={
+              `https://www.youtube.com/embed/${video.youtubeId}` +
+              `?autoplay=${isActive && !isPaused ? 1 : 0}` +
+              `&mute=${muted ? 1 : 0}` +
+              `&playsinline=1` +
+              `&controls=0` +
+              `&rel=0` +
+              `&modestbranding=1` +
+              `&enablejsapi=1` +
+              `&loop=1` +
+              `&playlist=${video.youtubeId}`
+            }
+            title={video.title}
+            loading={isActive ? "eager" : "lazy"}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <div className="short-video-placeholder" />
+        )}
 
-              <div className="short-video-wrap">
-
-                {/* ======================================
-                    YOUTUBE SHORT
-                ====================================== */}
-
-                <iframe
-                  key={`${video.id}-${muted}-${isPaused}`}
-                  className="short-video"
-                  src={
-                    `https://www.youtube.com/embed/${video.youtubeId}` +
-                    `?autoplay=${isActive && !isPaused ? 1 : 0}` +
-                    `&mute=${muted ? 1 : 0}` +
-                    `&playsinline=1` +
-                    `&controls=0` +
-                    `&rel=0` +
-                    `&modestbranding=1` +
-                    `&enablejsapi=1` +
-                    `&loop=1` +
-                    `&playlist=${video.youtubeId}`
-                  }
-                  title={video.title}
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                />
-
-                {/* ======================================
-                    OVERLAY
-                ====================================== */}
-
-                <div className="short-overlay" />
+        <div className="short-overlay" />
 
                 {/* ======================================
                     CENTER PLAY / PAUSE
@@ -340,10 +337,7 @@ function Shorts() {
                   <span className="short-category">
                     ADFICTION SHORTS
                   </span>
-
-                  <h2>
-                    {video.title}
-                  </h2>
+ 
 
                   <p>
                     {video.description}
@@ -414,15 +408,7 @@ function Shorts() {
                   </button>
 
                 </div>
-
-                {/* ======================================
-                    ACTIVE LINE
-                ====================================== */}
-
-                {isActive && (
-                  <div className="short-active-line" />
-                )}
-
+ 
               </div>
 
             </section>
