@@ -1,103 +1,147 @@
-/* =====================================
-   TRAILERS PAGE
-===================================== */
+/* =====================================================
+   ADFICTION — TRAILERS
+   PREMIUM 3D CINEMATIC DESIGN
+===================================================== */
 
 .trailers-page {
   position: relative;
   min-height: 100vh;
+
   background: #000;
   color: #fff;
+
   overflow: hidden;
 }
 
 
-/* =====================================
-   BACKGROUND EFFECTS
-===================================== */
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
 .trailers-noise {
   position: fixed;
   inset: 0;
-  pointer-events: none;
-  opacity: 0.03;
-  z-index: 20;
 
-  background-image:
+  pointer-events: none;
+
+  opacity: 0.025;
+
+  z-index: 50;
+
+  background:
     repeating-linear-gradient(
       0deg,
-      transparent,
-      transparent 2px,
-      #fff 3px
+      transparent 0,
+      transparent 3px,
+      #fff 4px
     );
 }
 
 
-.trailers-lines {
+/* Soft cinematic light */
+
+.trailers-page::before {
+  content: "";
+
   position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.25;
+
+  width: 800px;
+  height: 800px;
+
+  top: -250px;
+  right: -250px;
+
+  border-radius: 50%;
 
   background:
-    linear-gradient(
-      90deg,
-      transparent 49.9%,
-      rgba(255,255,255,0.04) 50%,
-      transparent 50.1%
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.06),
+      transparent 68%
     );
+
+  pointer-events: none;
 
   z-index: 0;
 }
 
 
-/* =====================================
+/* =====================================================
    NAVIGATION
-===================================== */
+===================================================== */
 
 .trailers-nav {
   position: absolute;
+
   top: 0;
   left: 0;
+
   width: 100%;
 
-  display: flex;
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
   align-items: center;
-  justify-content: space-between;
 
-  padding: 32px 5vw;
+  padding:
+    30px 5vw;
 
-  z-index: 10;
+  z-index: 20;
 }
 
 
+/* Back */
+
 .trailers-back {
-  display: flex;
+  display: inline-flex;
+
   align-items: center;
+
   gap: 10px;
 
+  width: fit-content;
+
   color: #aaa;
+
   text-decoration: none;
 
   font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
 
-  transition: color 0.3s ease;
+  font-weight: 800;
+
+  letter-spacing: 0.2em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .trailers-back svg {
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .trailers-back:hover {
   color: #fff;
+
+  transform:
+    translateX(-4px);
 }
 
 
+/* Brand */
+
 .trailers-brand {
+  font-family:
+    "Montserrat",
+    "Inter",
+    sans-serif;
+
   font-size: 20px;
+
   font-weight: 900;
-  letter-spacing: -0.05em;
+
+  letter-spacing: -0.06em;
 }
 
 .trailers-brand span {
@@ -105,136 +149,244 @@
 }
 
 
+/* Count */
+
 .trailers-count {
-  font-size: 12px;
+  justify-self: end;
+
+  font-size: 11px;
+
   font-weight: 800;
-  letter-spacing: 0.12em;
+
+  letter-spacing: 0.16em;
+
+  color: #aaa;
 }
 
 .trailers-count span {
-  color: #666;
+  margin-left: 5px;
+
   font-size: 8px;
+
+  color: #555;
 }
 
 
-/* =====================================
+/* =====================================================
    HERO
-===================================== */
+===================================================== */
 
 .trailers-hero {
   position: relative;
 
   min-height: 100vh;
 
-  display: flex;
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(400px, 0.95fr);
+
   align-items: center;
 
-  padding: 150px 8vw 100px;
+  gap: 70px;
+
+  padding:
+    130px 8vw 100px;
+
+  overflow: hidden;
 
   isolation: isolate;
 }
 
 
-.trailers-hero-bg {
-  position: absolute;
-  inset: 0;
+/* =====================================================
+   3D POSTER AREA
+===================================================== */
 
-  z-index: -4;
+.trailers-hero-bg {
+  position: relative;
+
+  width: min(100%, 600px);
+
+  height: 680px;
+
+  justify-self: end;
+
+  z-index: 1;
+
+  transform:
+    perspective(1400px)
+    rotateY(-10deg)
+    rotateX(2deg);
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.8s
+    cubic-bezier(0.2,0.8,0.2,1);
 }
 
 
+/* Poster depth layers */
+
+.trailers-hero-bg::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 22px -35px -22px 35px;
+
+  background: #0c0c0c;
+
+  border: 1px solid #252525;
+
+  transform:
+    translateZ(-50px);
+
+  box-shadow:
+    20px 20px 40px
+    rgba(0,0,0,0.8);
+
+  z-index: -2;
+}
+
+.trailers-hero-bg::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 10px -18px -10px 18px;
+
+  background: #171717;
+
+  border: 1px solid #303030;
+
+  transform:
+    translateZ(-25px);
+
+  z-index: -1;
+}
+
+
+/* Actual image */
+
 .trailers-hero-bg img {
+  position: relative;
+
   width: 100%;
   height: 100%;
 
+  display: block;
+
   object-fit: cover;
 
-  filter:
-    grayscale(100%)
-    brightness(0.45)
-    contrast(1.1);
+  border:
+    1px solid #444;
 
-  transform: scale(1.03);
+  box-shadow:
+    25px 30px 70px
+    rgba(0,0,0,0.9);
 
-  animation:
-    trailerZoom 12s ease-in-out infinite alternate;
+  transform:
+    translateZ(40px)
+    scale(1.01);
+
+  transition:
+    transform 0.8s ease;
 }
 
 
-@keyframes trailerZoom {
+/* Hover */
 
-  from {
-    transform: scale(1.03);
-  }
-
-  to {
-    transform: scale(1.12);
-  }
-
+.trailers-hero:hover
+.trailers-hero-bg {
+  transform:
+    perspective(1400px)
+    rotateY(-2deg)
+    rotateX(0deg)
+    translateY(-10px);
 }
 
+.trailers-hero:hover
+.trailers-hero-bg img {
+  transform:
+    translateZ(70px)
+    scale(1.025);
+}
+
+
+/* =====================================================
+   POSTER EDGE
+===================================================== */
+
+.trailers-hero-bg img {
+  outline:
+    1px solid
+    rgba(255,255,255,0.08);
+
+  outline-offset: -10px;
+}
+
+
+/* =====================================================
+   REMOVE OLD HERO GRADIENT
+===================================================== */
 
 .trailers-hero-gradient {
-  position: absolute;
-  inset: 0;
-
-  z-index: -3;
-
-  background:
-    linear-gradient(
-      90deg,
-      #000 0%,
-      rgba(0,0,0,0.92) 25%,
-      rgba(0,0,0,0.45) 60%,
-      rgba(0,0,0,0.8) 100%
-    ),
-    linear-gradient(
-      0deg,
-      #000 0%,
-      transparent 40%
-    );
+  display: none;
 }
 
 
-/* =====================================
+/* =====================================================
    HERO CONTENT
-===================================== */
+===================================================== */
 
 .trailers-hero-content {
   position: relative;
-  max-width: 850px;
 
-  z-index: 2;
+  z-index: 5;
+
+  max-width: 780px;
+
+  align-self: center;
 }
 
 
+/* Small label */
+
 .trailers-kicker {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 
   margin-bottom: 25px;
 
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-
   color: #aaa;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.3em;
 }
 
-
 .trailers-kicker span {
-  width: 35px;
+  width: 38px;
   height: 1px;
 
   background: #fff;
 }
 
 
+/* Title */
+
 .trailers-hero h1 {
   margin: 0;
 
-  max-width: 850px;
+  max-width: 800px;
 
   font-family:
     "Montserrat",
@@ -242,41 +394,48 @@
     sans-serif;
 
   font-size:
-    clamp(60px, 10vw, 160px);
+    clamp(55px, 8vw, 125px);
 
   line-height: 0.82;
 
   font-weight: 900;
 
-  letter-spacing: -0.07em;
+  letter-spacing: -0.075em;
 
   text-transform: uppercase;
 
   text-shadow:
-    0 15px 50px
-    rgba(0,0,0,0.8);
+    8px 8px 0 #090909,
+    15px 18px 35px
+    rgba(0,0,0,0.75);
 }
 
+
+/* Description */
 
 .trailers-hero-content > p {
   max-width: 520px;
 
   margin:
-    30px 0;
+    32px 0;
 
-  color: #aaa;
+  color: #888;
 
   font-size: 14px;
 
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 
-/* META */
+/* =====================================================
+   META
+===================================================== */
 
 .trailers-meta {
   display: flex;
+
   align-items: center;
+
   flex-wrap: wrap;
 
   gap: 12px;
@@ -286,11 +445,11 @@
   color: #aaa;
 
   font-size: 9px;
-  font-weight: 700;
+
+  font-weight: 800;
 
   letter-spacing: 0.16em;
 }
-
 
 .trailers-meta i {
   width: 4px;
@@ -298,116 +457,149 @@
 
   border-radius: 50%;
 
-  background: #666;
+  background: #555;
 }
 
 
-/* WATCH BUTTON */
+/* =====================================================
+   WATCH BUTTON
+===================================================== */
 
 .trailers-watch {
+  position: relative;
+
   display: inline-flex;
+
   align-items: center;
 
   gap: 14px;
 
-  padding: 13px 18px;
-
-  border:
-    1px solid #555;
+  padding:
+    12px 18px;
 
   color: #fff;
+
+  border:
+    1px solid #444;
+
+  background: #090909;
 
   text-decoration: none;
 
   font-size: 9px;
+
   font-weight: 800;
 
   letter-spacing: 0.18em;
 
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
-}
+  box-shadow:
+    6px 6px 0 #050505;
 
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease;
+}
 
 .trailers-watch:hover {
   background: #fff;
+
   color: #000;
 
   transform:
-    translateY(-4px);
+    translateY(-5px);
+
+  box-shadow:
+    10px 10px 0 #111;
 }
 
 
 .trailers-play-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   width: 32px;
   height: 32px;
 
-  border-radius: 50%;
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
 
   border:
     1px solid currentColor;
-}
 
+  border-radius: 50%;
+}
 
 .trailers-play-icon svg {
   font-size: 13px;
 }
 
 
-/* HERO NUMBER */
+/* =====================================================
+   HERO NUMBER
+===================================================== */
 
 .trailers-hero-number {
   position: absolute;
 
-  right: 6vw;
-  bottom: 80px;
+  left: 7vw;
+
+  bottom: 35px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
 
   font-size:
-    clamp(100px, 16vw, 260px);
-
-  font-weight: 900;
+    clamp(100px, 15vw, 240px);
 
   line-height: 0.7;
 
+  font-weight: 900;
+
+  letter-spacing: -0.1em;
+
   color:
-    rgba(255,255,255,0.04);
+    rgba(255,255,255,0.035);
 
   pointer-events: none;
+
+  z-index: -1;
 }
 
 
-/* SCROLL */
+/* =====================================================
+   SCROLL
+===================================================== */
 
 .trailers-scroll {
   position: absolute;
 
   bottom: 35px;
-  left: 8vw;
+
+  right: 8vw;
 
   display: flex;
+
   align-items: center;
 
   gap: 15px;
-}
 
+  z-index: 5;
+}
 
 .trailers-scroll span {
   font-size: 8px;
 
   letter-spacing: 0.2em;
 
-  color: #777;
+  color: #666;
 }
-
 
 .trailers-scroll div {
   width: 60px;
+
   height: 1px;
 
   background:
@@ -419,9 +611,9 @@
 }
 
 
-/* =====================================
+/* =====================================================
    COLLECTION
-===================================== */
+===================================================== */
 
 .trailers-collection {
   position: relative;
@@ -433,6 +625,10 @@
     1px solid #181818;
 }
 
+
+/* =====================================================
+   HEADING
+===================================================== */
 
 .trailers-heading {
   display: grid;
@@ -450,17 +646,15 @@
     0 auto 90px;
 }
 
-
 .trailers-label {
   font-size: 9px;
 
-  font-weight: 700;
+  font-weight: 800;
 
   letter-spacing: 0.3em;
 
   color: #666;
 }
-
 
 .trailers-heading h2 {
   margin:
@@ -468,7 +662,6 @@
 
   font-family:
     "Montserrat",
-    "Inter",
     sans-serif;
 
   font-size:
@@ -481,11 +674,9 @@
   letter-spacing: -0.07em;
 }
 
-
 .trailers-heading h2 strong {
   color: #666;
 }
-
 
 .trailers-heading p {
   margin: 0;
@@ -500,17 +691,17 @@
 }
 
 
-/* =====================================
-   GRID
-===================================== */
+/* =====================================================
+   TRAILER GRID
+===================================================== */
 
 .trailers-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(3, minmax(0,1fr));
 
-  gap: 25px;
+  gap: 28px;
 
   max-width: 1500px;
 
@@ -518,9 +709,9 @@
 }
 
 
-/* =====================================
+/* =====================================================
    CARD
-===================================== */
+===================================================== */
 
 .trailer-card {
   position: relative;
@@ -530,38 +721,49 @@
   background: #080808;
 
   border:
-    1px solid #1d1d1d;
-
-  transition:
-    transform 0.5s cubic-bezier(
-      0.2,
-      0.8,
-      0.2,
-      1
-    ),
-    border-color 0.4s ease,
-    background 0.4s ease;
+    1px solid #222;
 
   overflow: hidden;
-}
 
+  transform:
+    perspective(1000px)
+    translateZ(0);
+
+  transition:
+    transform 0.55s
+    cubic-bezier(0.2,0.8,0.2,1),
+    border-color 0.35s ease,
+    background 0.35s ease;
+
+  box-shadow:
+    8px 8px 0 #050505;
+}
 
 .trailer-card:hover {
   transform:
-    translateY(-10px);
+    perspective(1000px)
+    translateY(-12px)
+    rotateX(2deg)
+    rotateY(-2deg);
 
   border-color: #555;
 
-  background: #111;
-}
+  background: #101010;
 
+  box-shadow:
+    14px 14px 0 #050505,
+    25px 30px 45px
+    rgba(0,0,0,0.75);
+}
 
 .trailer-card.active {
-  border-color: #888;
+  border-color: #777;
 }
 
 
-/* IMAGE */
+/* =====================================================
+   IMAGE
+===================================================== */
 
 .trailer-card-image {
   position: relative;
@@ -573,33 +775,29 @@
   background: #111;
 }
 
-
 .trailer-card-image img {
   width: 100%;
   height: 100%;
 
+  display: block;
+
   object-fit: cover;
 
-  filter:
-    grayscale(100%)
-    brightness(0.65);
+  /* NO FILTER */
 
   transition:
-    transform 0.7s ease,
-    filter 0.5s ease;
+    transform 0.8s
+    cubic-bezier(0.2,0.8,0.2,1);
 }
-
 
 .trailer-card:hover
 .trailer-card-image img {
   transform:
-    scale(1.1);
-
-  filter:
-    grayscale(100%)
-    brightness(0.85);
+    scale(1.08);
 }
 
+
+/* Overlay */
 
 .trailer-card-overlay {
   position: absolute;
@@ -610,12 +808,14 @@
     linear-gradient(
       0deg,
       rgba(0,0,0,0.9),
-      transparent 65%
+      transparent 60%
     );
+
+  pointer-events: none;
 }
 
 
-/* CARD NUMBER */
+/* Number */
 
 .trailer-card-number {
   position: absolute;
@@ -623,68 +823,81 @@
   top: 18px;
   left: 18px;
 
+  z-index: 3;
+
   font-size: 10px;
 
-  font-weight: 800;
+  font-weight: 900;
 
   letter-spacing: 0.15em;
 
-  color: #aaa;
+  color: #fff;
 }
 
 
-/* PLAY */
+/* =====================================================
+   PLAY BUTTON
+===================================================== */
 
 .trailer-card-play {
   position: absolute;
 
-  left: 50%;
   top: 50%;
+  left: 50%;
 
-  width: 58px;
-  height: 58px;
+  width: 60px;
+  height: 60px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
+
+  border:
+    1px solid rgba(255,255,255,0.75);
 
   border-radius: 50%;
 
-  border:
-    1px solid rgba(255,255,255,0.7);
-
   background:
-    rgba(0,0,0,0.35);
+    rgba(0,0,0,0.4);
 
   transform:
-    translate(-50%, -50%)
-    scale(0.8);
+    translate(-50%,-50%)
+    scale(0.75);
 
   opacity: 0;
 
   transition:
-    transform 0.4s ease,
-    opacity 0.4s ease;
+    transform 0.45s ease,
+    opacity 0.45s ease,
+    background 0.35s ease,
+    color 0.35s ease;
 }
-
 
 .trailer-card:hover
 .trailer-card-play {
-  transform:
-    translate(-50%, -50%)
-    scale(1);
-
   opacity: 1;
+
+  transform:
+    translate(-50%,-50%)
+    scale(1);
+}
+
+.trailer-card-play svg {
+  font-size: 18px;
 }
 
 
-/* CONTENT */
+/* =====================================================
+   CARD CONTENT
+===================================================== */
 
 .trailer-card-content {
+  position: relative;
+
   padding: 25px;
 }
-
 
 .trailer-card-meta {
   display: flex;
@@ -697,11 +910,10 @@
 
   font-size: 8px;
 
-  font-weight: 700;
+  font-weight: 800;
 
   letter-spacing: 0.15em;
 }
-
 
 .trailer-card-meta span:last-child::before {
   content: "•";
@@ -711,16 +923,19 @@
   color: #444;
 }
 
-
 .trailer-card h3 {
   margin: 0;
 
+  font-family:
+    "Montserrat",
+    sans-serif;
+
   font-size:
-    clamp(24px, 2vw, 34px);
+    clamp(20px, 2vw, 24px);
 
   line-height: 1;
 
-  font-weight: 800;
+  font-weight: 900;
 
   letter-spacing: -0.04em;
 
@@ -728,12 +943,15 @@
 }
 
 
-/* CARD BOTTOM */
+/* =====================================================
+   CARD BOTTOM
+===================================================== */
 
 .trailer-card-bottom {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   margin-top: 30px;
@@ -747,32 +965,31 @@
 
   font-size: 8px;
 
-  font-weight: 700;
+  font-weight: 800;
 
   letter-spacing: 0.16em;
 }
-
 
 .trailer-card-bottom svg {
   font-size: 18px;
 
   transition:
-    transform 0.3s ease;
+    transform 0.35s ease,
+    color 0.35s ease;
 }
-
 
 .trailer-card:hover
 .trailer-card-bottom svg {
   color: #fff;
 
   transform:
-    translate(4px, -4px);
+    translate(5px,-5px);
 }
 
 
-/* =====================================
+/* =====================================================
    ENDING
-===================================== */
+===================================================== */
 
 .trailers-ending {
   position: relative;
@@ -784,6 +1001,7 @@
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
 
   text-align: center;
@@ -791,23 +1009,38 @@
   padding:
     100px 20px;
 
+  overflow: hidden;
+
   border-top:
     1px solid #181818;
 }
 
+
+/* 3D rings */
 
 .trailers-ending::before {
   content: "";
 
   position: absolute;
 
-  width: min(70vw, 700px);
+  width: min(65vw,700px);
+
   aspect-ratio: 1;
+
+  border:
+    1px solid #1c1c1c;
 
   border-radius: 50%;
 
-  border:
-    1px solid #151515;
+  transform:
+    perspective(700px)
+    rotateX(65deg);
+
+  box-shadow:
+    0 0 0 70px #080808,
+    0 0 0 71px #151515,
+    0 0 0 140px #050505,
+    0 0 0 141px #101010;
 
   pointer-events: none;
 }
@@ -816,6 +1049,8 @@
 .trailers-ending > span {
   position: relative;
 
+  z-index: 2;
+
   font-size: 9px;
 
   color: #666;
@@ -823,15 +1058,20 @@
   letter-spacing: 0.3em;
 }
 
-
 .trailers-ending h2 {
   position: relative;
+
+  z-index: 2;
 
   margin:
     30px 0 45px;
 
+  font-family:
+    "Montserrat",
+    sans-serif;
+
   font-size:
-    clamp(55px, 9vw, 150px);
+    clamp(55px,9vw,150px);
 
   line-height: 0.78;
 
@@ -840,14 +1080,17 @@
   letter-spacing: -0.07em;
 }
 
-
 .trailers-ending h2 strong {
   color: #666;
 }
 
 
+/* Ending button */
+
 .trailers-ending-button {
   position: relative;
+
+  z-index: 3;
 
   display: flex;
 
@@ -863,6 +1106,8 @@
 
   color: #fff;
 
+  background: #080808;
+
   text-decoration: none;
 
   font-size: 9px;
@@ -871,25 +1116,28 @@
 
   letter-spacing: 0.18em;
 
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
-}
+  box-shadow:
+    6px 6px 0 #050505;
 
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
 
 .trailers-ending-button:hover {
   background: #fff;
+
   color: #000;
 
   transform:
-    translateY(-5px);
+    translateY(-6px);
 }
 
 
-/* =====================================
+/* =====================================================
    EMPTY
-===================================== */
+===================================================== */
 
 .trailers-empty {
   min-height: 100vh;
@@ -899,6 +1147,7 @@
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 20px;
@@ -910,26 +1159,26 @@
   text-align: center;
 }
 
-
 .trailers-empty > svg {
   font-size: 50px;
 
   color: #555;
 }
 
-
 .trailers-empty h1 {
   margin: 0;
 
-  font-size:
-    clamp(40px, 8vw, 100px);
-}
+  font-family:
+    "Montserrat",
+    sans-serif;
 
+  font-size:
+    clamp(40px,8vw,100px);
+}
 
 .trailers-empty p {
   color: #777;
 }
-
 
 .trailers-empty a {
   display: flex;
@@ -940,15 +1189,15 @@
 
   margin-top: 20px;
 
-  color: #fff;
-
-  text-decoration: none;
+  padding:
+    14px 20px;
 
   border:
     1px solid #333;
 
-  padding:
-    14px 20px;
+  color: #fff;
+
+  text-decoration: none;
 
   font-size: 9px;
 
@@ -956,27 +1205,36 @@
 }
 
 
-/* =====================================
+/* =====================================================
    LAPTOP
-===================================== */
+===================================================== */
 
 @media (max-width: 1200px) {
 
+  .trailers-hero {
+    grid-template-columns:
+      1fr 0.85fr;
+
+    gap: 45px;
+
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .trailers-hero-bg {
+    height: 590px;
+  }
+
   .trailers-grid {
     grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+      repeat(2,minmax(0,1fr));
   }
-
-  .trailer-card-image {
-    height: 350px;
-  }
-
 }
 
 
-/* =====================================
+/* =====================================================
    TABLET
-===================================== */
+===================================================== */
 
 @media (max-width: 900px) {
 
@@ -985,6 +1243,38 @@
       25px 5vw;
   }
 
+  .trailers-hero {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding:
+      130px 7vw 90px;
+
+    gap: 70px;
+  }
+
+  .trailers-hero-content {
+    order: 1;
+  }
+
+  .trailers-hero-bg {
+    order: 2;
+
+    width: min(100%,650px);
+
+    height: 600px;
+
+    align-self: center;
+
+    transform:
+      perspective(1200px)
+      rotateY(-5deg);
+  }
 
   .trailers-heading {
     grid-template-columns: 1fr;
@@ -992,31 +1282,16 @@
     gap: 30px;
   }
 
-
-  .trailers-hero {
-    padding:
-      130px 7vw 90px;
-  }
-
-
-  .trailers-hero-number {
-    right: 5vw;
-
-    font-size: 150px;
-  }
-
-
   .trailers-collection {
     padding:
       100px 5vw;
   }
-
 }
 
 
-/* =====================================
+/* =====================================================
    MOBILE
-===================================== */
+===================================================== */
 
 @media (max-width: 600px) {
 
@@ -1025,11 +1300,9 @@
       22px 20px;
   }
 
-
   .trailers-back span {
     display: none;
   }
-
 
   .trailers-brand {
     position: absolute;
@@ -1042,165 +1315,195 @@
     font-size: 18px;
   }
 
-
   .trailers-count {
-    font-size: 10px;
+    font-size: 9px;
   }
-
 
   .trailers-count span {
     display: none;
   }
 
 
+  /* Hero */
+
   .trailers-hero {
     min-height: 100svh;
 
-    align-items: flex-end;
-
     padding:
-      120px 20px 100px;
+      110px 20px 80px;
+
+    gap: 45px;
   }
-
-
-  .trailers-hero-gradient {
-    background:
-      linear-gradient(
-        0deg,
-        #000 5%,
-        rgba(0,0,0,0.92) 38%,
-        rgba(0,0,0,0.25) 100%
-      );
-  }
-
 
   .trailers-hero-content {
     width: 100%;
   }
 
+  .trailers-kicker {
+    margin-bottom: 18px;
+
+    font-size: 8px;
+  }
 
   .trailers-hero h1 {
     font-size:
-      clamp(50px, 15vw, 80px);
+      clamp(48px,14vw,78px);
   }
-
 
   .trailers-hero-content > p {
+    margin:
+      22px 0;
+
     font-size: 12px;
 
-    margin:
-      20px 0;
+    line-height: 1.75;
   }
-
 
   .trailers-meta {
     gap: 8px;
 
-    font-size: 7px;
-
     margin-bottom: 25px;
+
+    font-size: 7px;
   }
 
 
-  .trailers-watch {
-    padding:
-      11px 14px;
+  /* Poster */
+
+  .trailers-hero-bg {
+    width: 100%;
+
+    height:
+      min(125vw,500px);
+
+    transform:
+      perspective(900px)
+      rotateY(-3deg);
   }
 
+  .trailers-hero-bg::before {
+    inset:
+      15px -20px -15px 20px;
+  }
+
+  .trailers-hero-bg::after {
+    inset:
+      7px -10px -7px 10px;
+  }
+
+  .trailers-hero-bg img {
+    transform:
+      translateZ(25px);
+  }
+
+
+  /* Number */
 
   .trailers-hero-number {
     display: none;
   }
 
 
+  /* Scroll */
+
   .trailers-scroll {
     left: 20px;
 
-    bottom: 35px;
-  }
+    right: auto;
 
+    bottom: 25px;
+  }
 
   .trailers-scroll span {
     display: none;
   }
-
 
   .trailers-scroll div {
     width: 40px;
   }
 
 
+  /* Collection */
+
   .trailers-collection {
     padding:
       90px 20px;
   }
 
-
   .trailers-heading {
     margin-bottom: 50px;
   }
 
-
   .trailers-heading h2 {
     font-size:
-      clamp(45px, 14vw, 70px);
+      clamp(45px,14vw,70px);
   }
-
 
   .trailers-heading p {
     font-size: 12px;
   }
 
 
+  /* Cards */
+
   .trailers-grid {
     grid-template-columns: 1fr;
 
-    gap: 20px;
+    gap: 25px;
   }
-
 
   .trailer-card-image {
     height: 250px;
   }
 
-
-  .trailer-card-content {
-    padding: 20px;
+  .trailer-card {
+    box-shadow:
+      6px 6px 0 #050505;
   }
 
+  .trailer-card:hover {
+    transform:
+      translateY(-7px);
+  }
 
   .trailer-card-play {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
 
     opacity: 1;
 
     transform:
-      translate(-50%, -50%);
+      translate(-50%,-50%);
   }
-
 
   .trailer-card h3 {
     font-size: 27px;
   }
 
 
+  /* Ending */
+
   .trailers-ending {
     min-height: 60vh;
+
+    padding:
+      80px 20px;
   }
 
+  .trailers-ending::before {
+    width: 100vw;
+  }
 
   .trailers-ending h2 {
     font-size:
-      clamp(48px, 14vw, 75px);
+      clamp(48px,14vw,75px);
   }
-
 }
 
 
-/* =====================================
+/* =====================================================
    SMALL MOBILE
-===================================== */
+===================================================== */
 
 @media (max-width: 380px) {
 
@@ -1209,31 +1512,25 @@
       20px 15px;
   }
 
-
   .trailers-hero {
     padding-left: 15px;
     padding-right: 15px;
   }
-
 
   .trailers-collection {
     padding-left: 15px;
     padding-right: 15px;
   }
 
+  .trailers-hero-bg {
+    height: 430px;
+  }
 
   .trailer-card-image {
     height: 220px;
   }
 
-
-  .trailers-meta {
-    font-size: 6px;
-  }
-
-
   .trailers-watch {
     font-size: 8px;
   }
-
 }

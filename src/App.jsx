@@ -72,12 +72,17 @@ function AnimatedRoutes() {
             path="/shortfilmcompetition"
             element={<ShortFilmCompetition />}
           />
+                  <Route
+            path="/homecompetition"
+            element={<HomeCompetition />}
+          />
 <Route
   path="/channels"
   element={<Channels />}
 />
 
   <Route path="/shorts" element={<Shorts />} />
+  <Route path="/trailers" element={<Trailers />} />
           <Route
             path="/watch/:videoId"
             element={<Watch />}

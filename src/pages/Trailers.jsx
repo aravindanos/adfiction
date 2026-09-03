@@ -81,90 +81,7 @@ function Trailers() {
       </header>
 
 
-      {/* HERO */}
-      <section className="trailers-hero">
-
-        <div className="trailers-hero-bg">
-          <img
-            src={thumbnail}
-            alt={featured.title}
-            onError={(event) => {
-              event.currentTarget.src =
-                `https://img.youtube.com/vi/${featured.youtubeId}/hqdefault.jpg`;
-            }}
-          />
-        </div>
-
-        <div className="trailers-hero-gradient" />
-
-        <div className="trailers-hero-content">
-
-          <div className="trailers-kicker">
-            <span />
-            FEATURED TRAILER
-          </div>
-
-          <h1>
-            {featured.title}
-          </h1>
-
-          <p>
-            {featured.description}
-          </p>
-
-          <div className="trailers-meta">
-
-            <span>
-              {featured.year}
-            </span>
-
-            <i />
-
-            <span>
-              {featured.genre}
-            </span>
-
-            <i />
-
-            <span>
-              OFFICIAL TRAILER
-            </span>
-
-          </div>
-
-          <a
-            href={`https://www.youtube.com/watch?v=${featured.youtubeId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="trailers-watch"
-          >
-            <span className="trailers-play-icon">
-              <FiPlay />
-            </span>
-
-            <span>
-              WATCH TRAILER
-            </span>
-
-            <FiArrowUpRight />
-
-          </a>
-
-        </div>
-
-
-        {/* BIG NUMBER */}
-        <div className="trailers-hero-number">
-          01
-        </div>
-
-        {/* SCROLL */}
-        <div className="trailers-scroll">
-          <span>SCROLL TO EXPLORE</span>
-          <div />
-        </div>
-
-      </section>
+    
 
 
       {/* TRAILER COLLECTION */}
@@ -186,7 +103,7 @@ function Trailers() {
           <p>
             Explore official trailers,
             upcoming stories and cinematic
-            experiences from ADFICTION.
+            experiences from SRV MEDIA.
           </p>
 
         </div>

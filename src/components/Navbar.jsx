@@ -78,7 +78,7 @@ function Navbar() {
 
         <div className="nav-mobile-header">
           <span>MENU</span>
-          <span>01 — 06</span>
+          <span>01 — 07</span>
         </div>
 
         <Link to="/" onClick={closeMenu}>
@@ -120,13 +120,20 @@ function Navbar() {
           <span>Shorts</span>
           <FiArrowUpRight />
         </Link>
-       
+       <Link
+          to="/trailers"
+          onClick={closeMenu}
+        >
+          <span className="nav-number">06</span>
+          <span>Trailers</span>
+          <FiArrowUpRight />
+        </Link>
 
 <Link
           to="/favorites"
           onClick={closeMenu}
         >
-          <span className="nav-number">06</span>
+          <span className="nav-number">07</span>
           <span>Favorites</span>
           <FiArrowUpRight />
         </Link>
