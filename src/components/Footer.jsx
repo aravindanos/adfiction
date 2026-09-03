@@ -64,6 +64,7 @@ function Footer() {
  
           <Link to="/short-films">SHORT FILMS</Link>
           <Link to="/album-songs">ALBUM SONGS</Link> 
+          <Link to="/about">ABOUT</Link> 
         </div>
 
         {/* SOCIAL */}

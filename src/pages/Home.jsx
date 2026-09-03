@@ -2,10 +2,11 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import Channels from "../pages/Channels"; 
-import VideoRow from "../components/VideoRow";
+import VideoRow from "../components/VideoRow"; 
 
 import videos from "../data/videos";
 import Reveal from "../components/Reveal";
+import HomeCompetition from './../components/HomeCompetition';
 
 function Home() {
 
@@ -16,9 +17,14 @@ function Home() {
   const albumSongs = videos.filter(
     (video) => video.category === "Album Songs"
   );
-  const shorts = videos.filter(
-    (video) => video.category === "Shorts"
+  const trailers = videos.filter(
+    (video) => video.category === "Trailers"
   );
+
+    const movies = videos.filter(
+    (video) => video.category === "Movies"
+  );
+
 
 const latest = [...videos].sort(
   (a, b) => Number(b.year) - Number(a.year)
@@ -56,11 +62,21 @@ const latest = [...videos].sort(
   </Reveal>
     <Reveal delay={0.16}>
     <VideoRow
-      title="Shorts"
-      videos={shorts}
+      title="Movies"
+      videos={movies}
+    />
+  </Reveal>
+
+  
+    <Reveal delay={0.16}>
+    <VideoRow
+      title="Trailers And Making"
+      videos={trailers}
     />
   </Reveal>
 </section>
+        <HomeCompetition />
+
         <Channels />
 
       <Reveal>

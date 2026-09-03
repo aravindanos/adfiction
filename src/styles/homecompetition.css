@@ -1,0 +1,920 @@
+/* =====================================================
+   HOME — SHORT FILM COMPETITION
+   PREMIUM 3D CINEMATIC DESIGN
+===================================================== */
+
+.home-competition {
+  position: relative;
+  min-height: 720px;
+  margin: 100px 0;
+  padding: 55px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 45%,
+      #202020 0%,
+      #0c0c0c 35%,
+      #050505 70%,
+      #000 100%
+    );
+
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+
+  color: #fff;
+
+  isolation: isolate;
+}
+
+
+/* =====================================================
+   CINEMATIC LIGHT
+===================================================== */
+
+.home-competition::before {
+  content: "";
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  top: 50%;
+  right: -180px;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(255, 255, 255, 0.025) 35%,
+      transparent 70%
+    );
+
+  filter: blur(10px);
+
+  pointer-events: none;
+  z-index: -2;
+}
+
+
+/* =====================================================
+   3D FLOOR
+===================================================== */
+
+.home-competition::after {
+  content: "";
+
+  position: absolute;
+
+  width: 900px;
+  height: 300px;
+
+  right: -100px;
+  bottom: -180px;
+
+  transform:
+    perspective(600px)
+    rotateX(65deg)
+    rotateZ(-8deg);
+
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image:
+    linear-gradient(
+      to top,
+      transparent,
+      black 45%,
+      transparent
+    );
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =====================================================
+   REMOVE OLD GRID
+===================================================== */
+
+.home-competition-grid {
+  display: none;
+}
+
+
+/* =====================================================
+   TOP
+===================================================== */
+
+.home-competition-top {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid #292929;
+}
+
+.home-competition-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+
+  color: #aaa;
+}
+
+.home-competition-label svg {
+  font-size: 16px;
+  color: #fff;
+}
+
+.home-competition-index {
+  font-size: 10px;
+
+  letter-spacing: 0.25em;
+
+  color: #555;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.home-competition-content {
+  position: relative;
+  z-index: 5;
+
+  min-height: 540px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 80px;
+}
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.home-competition-copy {
+  max-width: 650px;
+
+  transform:
+    translateZ(30px);
+}
+
+.home-competition-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 25px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.35em;
+
+  color: #777;
+}
+
+.home-competition-copy h2 {
+  margin: 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(
+    50px,
+    7vw,
+    105px
+  );
+
+  font-weight: 900;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.07em;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    8px 8px 0 #080808,
+    14px 14px 25px rgba(0, 0, 0, 0.8);
+}
+
+.home-competition-copy h2 span {
+  color: #555;
+}
+
+.home-competition-copy p {
+  max-width: 500px;
+
+  margin: 35px 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: #888;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.home-competition-button {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 17px 22px;
+
+  color: #000;
+
+  background: #fff;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  box-shadow:
+    6px 6px 0 #111,
+    12px 12px 20px rgba(0, 0, 0, 0.7);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.home-competition-button svg {
+  font-size: 18px;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.home-competition-button:hover {
+  color: #fff;
+
+  background: #222;
+
+  transform:
+    translateY(-6px)
+    translateX(-2px);
+
+  box-shadow:
+    10px 10px 0 #050505,
+    18px 18px 30px rgba(0, 0, 0, 0.85);
+}
+
+.home-competition-button:hover svg {
+  transform:
+    translate(5px, -5px);
+}
+
+
+/* =====================================================
+   3D VISUAL
+===================================================== */
+
+.home-competition-visual {
+  position: relative;
+
+  height: 480px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  border: 1px solid #333;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #242424 0%,
+      #111 35%,
+      #080808 70%,
+      #030303 100%
+    );
+
+  box-shadow:
+    18px 18px 0 #050505,
+    30px 30px 60px rgba(0, 0, 0, 0.9);
+
+  transform:
+    perspective(1200px)
+    rotateY(-6deg)
+    rotateX(2deg);
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.7s
+      cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.4s ease,
+    box-shadow 0.6s ease;
+}
+
+.home-competition-visual:hover {
+  transform:
+    perspective(1200px)
+    rotateY(0deg)
+    rotateX(0deg)
+    translateY(-12px)
+    translateZ(25px);
+
+  border-color: #666;
+
+  box-shadow:
+    25px 25px 0 #050505,
+    40px 40px 80px rgba(0, 0, 0, 0.95);
+}
+
+
+/* =====================================================
+   3D INNER SHINE
+===================================================== */
+
+.home-competition-visual::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.09),
+      transparent 25%,
+      transparent 70%,
+      rgba(255, 255, 255, 0.025)
+    );
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   3D RINGS
+===================================================== */
+
+.home-competition-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.8s ease,
+    border-color 0.5s ease;
+}
+
+.home-competition-circle.circle-one {
+  width: 430px;
+  height: 430px;
+
+  border: 1px solid #333;
+
+  box-shadow:
+    inset 0 0 50px rgba(255, 255, 255, 0.015),
+    0 0 50px rgba(255, 255, 255, 0.025);
+
+  transform:
+    rotateX(65deg)
+    rotateZ(-20deg)
+    translateZ(20px);
+}
+
+.home-competition-circle.circle-two {
+  width: 300px;
+  height: 300px;
+
+  border: 1px solid #555;
+
+  box-shadow:
+    inset 0 0 35px rgba(255, 255, 255, 0.025);
+
+  transform:
+    rotateX(65deg)
+    rotateZ(20deg)
+    translateZ(45px);
+}
+
+.home-competition-visual:hover
+.circle-one {
+  transform:
+    rotateX(65deg)
+    rotateZ(-35deg)
+    translateZ(45px);
+}
+
+.home-competition-visual:hover
+.circle-two {
+  transform:
+    rotateX(65deg)
+    rotateZ(35deg)
+    translateZ(70px);
+}
+
+
+/* =====================================================
+   CENTER FILM TEXT
+===================================================== */
+
+.home-competition-number {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  text-align: center;
+
+  transform:
+    translateZ(80px)
+    rotate(-8deg);
+
+  text-shadow:
+    10px 10px 0 #050505,
+    18px 18px 35px rgba(0, 0, 0, 0.9);
+
+  transition:
+    transform 0.6s ease;
+}
+
+.home-competition-visual:hover
+.home-competition-number {
+  transform:
+    translateZ(120px)
+    rotate(-3deg)
+    scale(1.04);
+}
+
+.home-competition-number span {
+  font-size: 18px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.45em;
+
+  color: #777;
+}
+
+.home-competition-number strong {
+  margin-top: -10px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(
+    75px,
+    10vw,
+    150px
+  );
+
+  font-weight: 900;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.08em;
+}
+
+
+/* =====================================================
+   FLOATING ARROW
+===================================================== */
+
+.home-competition-play {
+  position: absolute;
+
+  top: 30px;
+
+  right: 30px;
+
+  z-index: 6;
+
+  width: 55px;
+
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #444;
+
+  border-radius: 50%;
+
+  background: #0a0a0a;
+
+  box-shadow:
+    7px 7px 0 #050505,
+    12px 12px 20px rgba(0, 0, 0, 0.7);
+
+  transform:
+    translateZ(60px);
+
+  transition:
+    transform 0.5s ease,
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+.home-competition-play svg {
+  font-size: 20px;
+}
+
+.home-competition-visual:hover
+.home-competition-play {
+  transform:
+    translateZ(100px)
+    rotate(45deg)
+    scale(1.08);
+
+  background: #fff;
+
+  color: #000;
+}
+
+
+/* =====================================================
+   BOTTOM INFO
+===================================================== */
+
+.home-competition-bottom {
+  position: absolute;
+
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+
+  z-index: 6;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #333;
+
+  transform:
+    translateZ(50px);
+}
+
+.home-competition-bottom span {
+  font-size: 9px;
+
+  letter-spacing: 0.25em;
+
+  color: #666;
+}
+
+.home-competition-bottom strong {
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+}
+
+
+/* =====================================================
+   SMALL 3D LIGHT ORB
+===================================================== */
+
+.home-competition-visual::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: 25%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    translateZ(20px);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.05),
+      transparent 65%
+    );
+
+  filter: blur(8px);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.home-competition-footer {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #222;
+
+  font-size: 9px;
+
+  letter-spacing: 0.25em;
+
+  color: #555;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .home-competition {
+    padding: 40px;
+  }
+
+  .home-competition-content {
+    gap: 40px;
+  }
+
+  .home-competition-copy h2 {
+    font-size: 65px;
+  }
+
+  .home-competition-visual {
+    height: 420px;
+  }
+
+  .home-competition-circle.circle-one {
+    width: 360px;
+    height: 360px;
+  }
+
+  .home-competition-circle.circle-two {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .home-competition {
+    min-height: auto;
+
+    margin: 70px 0;
+
+    padding: 25px 20px;
+  }
+
+  .home-competition-top {
+    align-items: flex-start;
+  }
+
+  .home-competition-index {
+    display: none;
+  }
+
+  .home-competition-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 45px;
+
+    min-height: auto;
+
+    padding: 55px 0;
+  }
+
+  .home-competition-copy h2 {
+    font-size:
+      clamp(
+        55px,
+        16vw,
+        85px
+      );
+  }
+
+  .home-competition-copy p {
+    margin: 25px 0;
+
+    font-size: 13px;
+  }
+
+  .home-competition-button {
+    box-shadow:
+      5px 5px 0 #111,
+      10px 10px 18px rgba(0, 0, 0, 0.7);
+  }
+
+  .home-competition-visual {
+    width: 100%;
+
+    height: 380px;
+
+    transform:
+      perspective(900px)
+      rotateY(-3deg);
+  }
+
+  .home-competition-visual:hover {
+    transform:
+      perspective(900px)
+      rotateY(0deg)
+      translateY(-5px);
+  }
+
+  .home-competition-number strong {
+    font-size: 90px;
+  }
+
+  .home-competition-circle.circle-one {
+    width: 330px;
+    height: 330px;
+  }
+
+  .home-competition-circle.circle-two {
+    width: 240px;
+    height: 240px;
+  }
+
+  .home-competition-bottom {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .home-competition-footer {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .home-competition {
+    padding: 22px 15px;
+  }
+
+  .home-competition-copy h2 {
+    font-size: 52px;
+  }
+
+  .home-competition-button {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .home-competition-visual {
+    height: 330px;
+  }
+
+  .home-competition-number strong {
+    font-size: 75px;
+  }
+
+  .home-competition-number span {
+    font-size: 13px;
+  }
+
+  .home-competition-circle.circle-one {
+    width: 285px;
+    height: 285px;
+  }
+
+  .home-competition-circle.circle-two {
+    width: 205px;
+    height: 205px;
+  }
+}
+
+
+/* =====================================================
+   YOUTUBE BACKGROUND VIDEO
+===================================================== */
+
+.home-competition-video {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 100%;
+  height: 100%;
+
+  transform: translate(-50%, -50%) scale(1.35);
+
+  border: 0;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =====================================================
+   CINEMATIC VIDEO OVERLAY
+===================================================== */
+
+.home-competition-video-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1; 
+}
+
+
+/* Keep all content above video */
+
+.home-competition-number,
+.home-competition-play,
+.home-competition-bottom {
+  z-index: 5;
+}

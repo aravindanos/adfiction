@@ -104,28 +104,29 @@ function Navbar() {
           <span>Album Songs</span>
           <FiArrowUpRight />
         </Link>
+         <Link
+          to="/movies"
+          onClick={closeMenu}
+        >
+          <span className="nav-number">04</span>
+          <span>Movies</span>
+          <FiArrowUpRight />
+        </Link>
   <Link
           to="/shorts"
           onClick={closeMenu}
         >
-          <span className="nav-number">04</span>
+          <span className="nav-number">05</span>
           <span>Shorts</span>
           <FiArrowUpRight />
         </Link>
-        <Link
-          to="/about"
-          onClick={closeMenu}
-        >
-          <span className="nav-number">04</span>
-          <span>About</span>
-          <FiArrowUpRight />
-        </Link>
+       
 
 <Link
           to="/favorites"
           onClick={closeMenu}
         >
-          <span className="nav-number">05</span>
+          <span className="nav-number">06</span>
           <span>Favorites</span>
           <FiArrowUpRight />
         </Link>

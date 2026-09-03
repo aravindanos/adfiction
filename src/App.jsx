@@ -14,6 +14,10 @@ import About from "./pages/About";
 import Favorites from "./pages/Favorites";
 import Channels from "./pages/Channels";
 import Shorts from "./pages/Shorts";
+import Movies from "./pages/Movies";
+import Trailers from "./pages/Trailers";
+import ShortFilmCompetition from "./pages/ShortFilmCompetition";
+import HomeCompetition from "./components/HomeCompetition";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -55,6 +59,18 @@ function AnimatedRoutes() {
           <Route
             path="/album-songs"
             element={<AlbumSongs />}
+          />
+            <Route
+            path="/movies"
+            element={<Movies />}
+          />
+             <Route
+            path="/trailers"
+            element={<Trailers />}
+          />
+               <Route
+            path="/shortfilmcompetition"
+            element={<ShortFilmCompetition />}
           />
 <Route
   path="/channels"
