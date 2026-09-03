@@ -8,7 +8,7 @@ import {
 } from "react-icons/fi";
 
 import videos from "../data/videos";
-import "../styles/trailers.css";
+import "../styles/Trailers.css";
 
 function Trailers() {
   const trailers = useMemo(
