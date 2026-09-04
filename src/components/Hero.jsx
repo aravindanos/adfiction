@@ -21,11 +21,7 @@ function Hero() {
 
       {/* CONTENT */}
       <div className="hero-content">
-
-        <div className="hero-overline">
-          <span></span>
-          ADFICTION ORIGINALS
-        </div>
+ 
 
         <h1>
           STORIES
@@ -37,7 +33,7 @@ function Hero() {
 
         <p className="hero-description">
           Discover cinematic short films, emotional stories
-          and original album songs created by ADFICTION.
+          and original album songs created by ADFICTION And SRV MEDIA.
         </p>
 
       <div className="hero-buttons">
@@ -56,7 +52,12 @@ function Hero() {
   >
     Explore
   </Link>
-
+ <Link
+    to="/about"
+    className="explore-button"
+  >
+    ABOUT
+  </Link>
 </div>
 
       </div>
@@ -79,7 +80,7 @@ function Hero() {
 
           <video
             className="intro-video"
-            src="/intro.mp4"
+            src="/intro2.mp4"
             autoPlay
             muted
             loop
@@ -92,7 +93,7 @@ function Hero() {
 
             <div>
               <small>CHANNEL INTRO</small>
-              <strong>ADFICTION</strong>
+              <strong>ADFICTION & SRVMEDIA</strong>
             </div>
 
             <div className="video-play">

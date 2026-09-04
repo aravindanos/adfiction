@@ -18,7 +18,8 @@ import Movies from "./pages/Movies";
 import Trailers from "./pages/Trailers";
 import ShortFilmCompetition from "./pages/ShortFilmCompetition";
 import HomeCompetition from "./components/HomeCompetition";
-import SRVMedia from "./components/SRVMedia";
+import SRVMedia from "./components/SRVMedia";   
+import Fiction from "./components/Fiction";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -82,6 +83,10 @@ function AnimatedRoutes() {
             path="/srvmedia"
             element={<SRVMedia />}
           />
+
+  <Route path="/fiction" element={<Fiction />} />
+
+           
 <Route
   path="/channels"
   element={<Channels />}

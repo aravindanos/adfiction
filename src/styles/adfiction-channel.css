@@ -1,0 +1,1234 @@
+/* =========================================================
+   ADFICTION
+   BLACK / WHITE 3D CINEMATIC DESIGN
+========================================================= */
+
+.adfiction-channel {
+  position: relative;
+
+  width: 100%;
+  min-height: 760px;
+
+  padding: 120px 6%;
+
+  background: #000;
+
+  color: #fff;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND NOISE
+========================================================= */
+
+.adfiction-noise {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.045;
+
+  pointer-events: none;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+
+  z-index: -5;
+}
+
+
+/* =========================================================
+   3D GRID
+========================================================= */
+
+.adfiction-grid {
+  position: absolute;
+
+  width: 1000px;
+  height: 600px;
+
+  right: -250px;
+  bottom: -320px;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+
+  transform:
+    perspective(700px)
+    rotateX(65deg)
+    rotateZ(-8deg);
+
+  mask-image:
+    radial-gradient(
+      ellipse,
+      #000 20%,
+      transparent 75%
+    );
+
+  opacity: 0.45;
+
+  z-index: -4;
+}
+
+
+/* =========================================================
+   LIGHT SOURCES
+========================================================= */
+
+.adfiction-light {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(100px);
+
+  z-index: -3;
+}
+
+
+.light-one {
+  width: 450px;
+  height: 450px;
+
+  right: 5%;
+  top: 5%;
+
+  background: rgba(255,255,255,0.08);
+}
+
+
+.light-two {
+  width: 300px;
+  height: 300px;
+
+  left: -120px;
+  bottom: -80px;
+
+  background: rgba(255,255,255,0.055);
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.adfiction-container {
+
+  position: relative;
+
+  max-width: 1500px;
+
+  min-height: 520px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    0.85fr 1.15fr;
+
+  align-items: center;
+
+  gap: 100px;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.adfiction-content {
+  position: relative;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.adfiction-eyebrow {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 32px;
+
+  color: rgba(255,255,255,0.65);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+
+.adfiction-eyebrow span {
+
+  width: 35px;
+
+  height: 1px;
+
+  background: #fff;
+
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.adfiction-title {
+
+  display: flex;
+
+  flex-direction: column;
+
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(55px, 7vw, 105px);
+
+  line-height: 0.83;
+
+  letter-spacing: -6px;
+
+  font-weight: 900;
+
+  color: #fff;
+}
+
+
+.adfiction-title span {
+
+  display: block;
+}
+
+
+.adfiction-title .outline {
+
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px rgba(255,255,255,0.8);
+
+  margin-left: 45px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.adfiction-description {
+
+  max-width: 540px;
+
+  margin-top: 38px;
+
+  color:
+    rgba(255,255,255,0.55);
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   LINE
+========================================================= */
+
+.adfiction-line {
+
+  width: 100%;
+
+  max-width: 520px;
+
+  height: 1px;
+
+  margin-top: 35px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.5),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.adfiction-meta {
+
+  display: flex;
+
+  gap: 38px;
+
+  margin-top: 30px;
+}
+
+
+.adfiction-meta > div {
+
+  position: relative;
+
+  min-width: 95px;
+}
+
+
+.adfiction-meta small {
+
+  display: block;
+
+  margin-bottom: 10px;
+
+  color:
+    rgba(255,255,255,0.3);
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+.adfiction-meta strong {
+
+  display: block;
+
+  color: #fff;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+}
+
+
+.adfiction-meta p {
+
+  margin: 6px 0 0;
+
+  color:
+    rgba(255,255,255,0.35);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.adfiction-buttons {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 40px;
+}
+
+
+.adfiction-watch,
+.adfiction-explore {
+
+  height: 52px;
+
+  padding:
+    0 22px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 25px;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  transition:
+    0.4s ease;
+}
+
+
+.adfiction-watch {
+
+  background: #fff;
+
+  color: #000;
+
+  box-shadow:
+    0 15px 40px rgba(255,255,255,0.08);
+}
+
+
+.adfiction-watch b {
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.adfiction-watch:hover {
+
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 25px 60px rgba(255,255,255,0.15);
+}
+
+
+.adfiction-watch:hover b {
+
+  transform:
+    translate(4px,-4px);
+}
+
+
+.adfiction-explore {
+
+  border:
+    1px solid rgba(255,255,255,0.25);
+
+  color: #fff;
+
+  background:
+    rgba(255,255,255,0.025);
+}
+
+
+.adfiction-explore:hover {
+
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(255,255,255,0.08);
+
+  border-color:
+    rgba(255,255,255,0.7);
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.adfiction-visual {
+
+  position: relative;
+
+  min-height: 580px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  perspective: 1800px;
+}
+
+
+/* =========================================================
+   BACK 3D PANEL
+========================================================= */
+
+.back-panel {
+
+  position: absolute;
+
+  width: 76%;
+
+  height: 70%;
+
+  right: 1%;
+
+  top: 13%;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.06),
+      rgba(255,255,255,0.01)
+    );
+
+  transform:
+    translateZ(-80px)
+    rotateY(-12deg)
+    rotateX(4deg);
+
+  box-shadow:
+    40px 40px 100px rgba(0,0,0,0.8);
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   MAIN 3D PERSPECTIVE
+========================================================= */
+
+.adfiction-perspective {
+
+  position: relative;
+
+  width:
+    min(720px, 100%);
+
+  transform:
+    rotateY(-8deg)
+    rotateX(3deg)
+    rotateZ(1deg);
+
+  transform-style:
+    preserve-3d;
+
+  transition:
+    transform 0.8s
+    cubic-bezier(.2,.8,.2,1);
+}
+
+
+.adfiction-visual:hover
+.adfiction-perspective {
+
+  transform:
+    rotateY(0deg)
+    rotateX(0deg)
+    rotateZ(0deg)
+    translateY(-10px);
+}
+
+
+/* =========================================================
+   VIDEO CARD
+========================================================= */
+
+.adfiction-video-card {
+
+  position: relative;
+
+  padding: 8px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.22),
+      rgba(255,255,255,0.025)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.25);
+
+  border-radius: 5px;
+
+  box-shadow:
+    35px 45px 100px rgba(0,0,0,0.8),
+    0 0 100px rgba(255,255,255,0.04);
+
+  transform-style:
+    preserve-3d;
+}
+
+
+/* =========================================================
+   VIDEO HEADER
+========================================================= */
+
+.video-header {
+
+  height: 40px;
+
+  padding:
+    0 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #050505;
+
+  color: #fff;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.header-left {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.header-dot {
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 10px #fff;
+}
+
+
+.header-right {
+
+  color:
+    rgba(255,255,255,0.35);
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.adfiction-video-wrapper {
+
+  position: relative;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #000;
+}
+
+
+.adfiction-video {
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+ 
+
+  transform:
+    scale(1.02);
+}
+
+
+/* =========================================================
+   CINEMATIC OVERLAY
+========================================================= */
+
+.cinematic-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.15),
+      transparent 35%,
+      rgba(0,0,0,0.85)
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   VIDEO BRAND
+========================================================= */
+
+.video-brand {
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%,-50%);
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+
+.brand-main {
+
+  color: #fff;
+
+  font-size:
+    clamp(55px, 7vw, 100px);
+
+  line-height: 0.75;
+
+  font-weight: 900;
+
+  letter-spacing: -7px;
+
+  text-shadow:
+    0 15px 50px rgba(0,0,0,0.8);
+}
+
+
+.brand-sub {
+
+  margin-top: 16px;
+
+  color: #fff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 9px;
+
+  padding-left: 9px;
+}
+
+
+/* =========================================================
+   VIDEO FOOTER
+========================================================= */
+
+.video-footer {
+
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #fff;
+
+  font-size: 7px;
+
+  letter-spacing: 3px;
+
+  font-weight: 700;
+}
+
+
+.video-footer i {
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   FLOATING CARD
+========================================================= */
+
+.floating-info {
+
+  position: absolute;
+
+  right: -45px;
+
+  bottom: -45px;
+
+  width: 210px;
+
+  padding: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  background:
+    rgba(5,5,5,0.88);
+
+  border:
+    1px solid rgba(255,255,255,0.2);
+
+  backdrop-filter:
+    blur(20px);
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.7);
+
+  transform:
+    translateZ(100px);
+
+  animation:
+    floatingCard 4s ease-in-out infinite;
+}
+
+
+@keyframes floatingCard {
+
+  0%,
+  100% {
+    transform:
+      translateZ(100px)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateZ(100px)
+      translateY(-10px);
+  }
+
+}
+
+
+.floating-number {
+
+  font-size: 28px;
+
+  font-weight: 900;
+
+  color:
+    rgba(255,255,255,0.2);
+}
+
+
+.floating-text {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+.floating-text span {
+
+  color:
+    rgba(255,255,255,0.4);
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+}
+
+
+.floating-text strong {
+
+  color: #fff;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FLOOR
+========================================================= */
+
+.perspective-floor {
+
+  position: absolute;
+
+  width: 500px;
+  height: 180px;
+
+  bottom: 20px;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.06) 1px,
+      transparent 1px
+    );
+
+  background-size: 100% 30px;
+
+  transform:
+    perspective(500px)
+    rotateX(65deg);
+
+  opacity: 0.2;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      #000,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .adfiction-container {
+
+    grid-template-columns: 1fr;
+
+    gap: 80px;
+
+    text-align: center;
+  }
+
+
+  .adfiction-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+
+  .adfiction-description {
+
+    max-width: 650px;
+  }
+
+
+  .adfiction-line {
+
+    max-width: 600px;
+  }
+
+
+  .adfiction-meta {
+
+    justify-content: center;
+  }
+
+
+  .adfiction-visual {
+
+    min-height: auto;
+
+    padding:
+      20px 30px 70px;
+  }
+
+
+  .adfiction-perspective {
+
+    width:
+      min(750px, 100%);
+
+    transform:
+      rotateY(0deg)
+      rotateX(2deg);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .adfiction-channel {
+
+    padding:
+      80px 20px;
+  }
+
+
+  .adfiction-container {
+
+    gap: 55px;
+  }
+
+
+  .adfiction-eyebrow {
+
+    font-size: 8px;
+
+    letter-spacing: 2.5px;
+  }
+
+
+  .adfiction-title {
+
+    font-size:
+      clamp(45px, 14vw, 70px);
+
+    letter-spacing:
+      -3px;
+  }
+
+
+  .adfiction-title .outline {
+
+    margin-left: 20px;
+  }
+
+
+  .adfiction-description {
+
+    margin-top: 30px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+
+  .adfiction-meta {
+
+    width: 100%;
+
+    gap: 10px;
+
+    justify-content:
+      space-between;
+  }
+
+
+  .adfiction-meta > div {
+
+    min-width: 0;
+  }
+
+
+  .adfiction-meta strong {
+
+    font-size: 8px;
+  }
+
+
+  .adfiction-meta p {
+
+    font-size: 7px;
+  }
+
+
+  .adfiction-buttons {
+
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+
+  .adfiction-watch,
+  .adfiction-explore {
+
+    width: 100%;
+  }
+
+
+  .adfiction-visual {
+
+    padding:
+      10px 0 60px;
+  }
+
+
+  .adfiction-perspective {
+
+    width: 100%;
+
+    transform:
+      rotateY(0)
+      rotateX(0);
+  }
+
+
+  .adfiction-video-card {
+
+    padding: 5px;
+  }
+
+
+  .video-header {
+
+    height: 32px;
+
+    font-size: 7px;
+  }
+
+
+  .brand-main {
+
+    font-size: 55px;
+
+    letter-spacing:
+      -4px;
+  }
+
+
+  .brand-sub {
+
+    font-size: 7px;
+
+    letter-spacing: 5px;
+
+    padding-left: 5px;
+  }
+
+
+  .floating-info {
+
+    right: 0;
+
+    bottom: 10px;
+
+    width: 170px;
+
+    padding: 12px;
+  }
+
+
+  .floating-number {
+
+    font-size: 22px;
+  }
+
+
+  .perspective-floor {
+
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .adfiction-title {
+
+    font-size: 40px;
+  }
+
+
+  .adfiction-meta {
+
+    gap: 5px;
+  }
+
+
+  .adfiction-meta small {
+
+    font-size: 7px;
+  }
+
+
+  .adfiction-meta strong {
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .adfiction-meta p {
+
+    font-size: 6px;
+  }
+
+
+  .video-footer {
+
+    left: 10px;
+
+    right: 10px;
+
+    bottom: 10px;
+
+    font-size: 5px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .floating-info {
+
+    transform:
+      scale(0.9);
+
+    transform-origin:
+      bottom right;
+  }
+
+}
