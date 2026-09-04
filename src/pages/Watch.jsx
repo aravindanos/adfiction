@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef  } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   FiArrowLeft,
@@ -152,7 +152,55 @@ function Watch() {
       copyLink();
     }
   };
+const playerRef = useRef(null);
 
+useEffect(() => {
+  const handleFullscreenChange = async () => {
+    const isFullscreen =
+      document.fullscreenElement ||
+      document.webkitFullscreenElement;
+
+    if (isFullscreen) {
+      try {
+        if (screen.orientation?.lock) {
+          await screen.orientation.lock("landscape");
+        }
+      } catch (error) {
+        console.log("Landscape lock not supported:", error);
+      }
+    } else {
+      try {
+        if (screen.orientation?.unlock) {
+          screen.orientation.unlock();
+        }
+      } catch {
+        // Ignore
+      }
+    }
+  };
+
+  document.addEventListener(
+    "fullscreenchange",
+    handleFullscreenChange
+  );
+
+  document.addEventListener(
+    "webkitfullscreenchange",
+    handleFullscreenChange
+  );
+
+  return () => {
+    document.removeEventListener(
+      "fullscreenchange",
+      handleFullscreenChange
+    );
+
+    document.removeEventListener(
+      "webkitfullscreenchange",
+      handleFullscreenChange
+    );
+  };
+}, []);
   return (
     <div className="watch-page">
       <Navbar />
@@ -181,27 +229,28 @@ function Watch() {
         </div>
 
         {/* PLAYER */}
-        <section className="watch-player-section">
-          <div className="watch-player-frame">
-            <iframe
-              src={`https://www.youtube.com/embed/${video.youtubeId}?rel=0&modestbranding=1`}
-              title={video.title}
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share
-              "
-              allowFullScreen
-            />
+       {/* PLAYER */}
+<section className="watch-player-section">
+  <div className="watch-player-frame">
+    <iframe
+      src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+      title={video.title}
+      allow="
+        autoplay;
+        accelerometer;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+        web-share
+      "
+      allowFullScreen
+    />
 
-            <div className="watch-player-border"></div>
-            <div className="watch-player-glow"></div>
-          </div>
-        </section>
+    <div className="watch-player-border"></div>
+    <div className="watch-player-glow"></div>
+  </div>
+</section>
 
         {/* VIDEO INFO */}
         <section className="watch-info">

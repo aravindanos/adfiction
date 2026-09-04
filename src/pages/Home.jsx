@@ -6,7 +6,8 @@ import VideoRow from "../components/VideoRow";
 
 import videos from "../data/videos";
 import Reveal from "../components/Reveal";
-import HomeCompetition from './../components/HomeCompetition';
+import HomeCompetition from './../components/HomeCompetition'; 
+import SRVMedia from './../components/SRVMedia';
 
 function Home() {
 
@@ -75,6 +76,9 @@ const latest = [...videos].sort(
     />
   </Reveal>
 </section>
+
+        <SRVMedia />
+
         <HomeCompetition />
 
         <Channels />

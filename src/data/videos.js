@@ -61,7 +61,7 @@ const videos = [
 
   {
     id: "album-06",
-    title: "En Thangachi - என் தங்கச்சி – A Brother’s Love",
+    title: "En Thangachi - என் தங்கச்சி",
     youtubeId: "MNuPjKfmy3k",
     category: "Album Songs",
     genre: "Music",
@@ -83,7 +83,7 @@ const videos = [
 
     {
     id: "album-08",
-    title: "En Chellakutty - Album Song",
+    title: "En Chellakutty - என் செல்லாகுட்டி",
     youtubeId: "D3TaepKo2ek",
     category: "Album Songs",
     genre: "Music",
@@ -93,7 +93,7 @@ const videos = [
   },
       {
     id: "album-09",
-    title: "Enthan Thanthaiye Video Song - Appavin Valimai",
+    title: "Enthan Thanthaiye - Appavin Valimai",
     youtubeId: "cbJAlI1DadM",
     category: "Album Songs",
     genre: "Music",
@@ -124,7 +124,7 @@ const videos = [
 
           {
     id: "album-12",
-    title: "Thangamey - Official Video Song - Appavin Valimai 2 ",
+    title: "Thangamey - Appavin Valimai 2 ",
     youtubeId: "RkHtd_kyjvY",
     category: "Album Songs",
     genre: "Music",
@@ -184,7 +184,7 @@ const videos = [
   },
     {
     id: "shortfilm-05",
-    title: "Mr.Nadigan - ShortFilm",
+    title: "Mr.Nadigan - A Actor's Journey ShortFilm",
     youtubeId: "N0C6fGmZGAs",
     category: "Short Films",
     genre: "Short Film",
@@ -353,7 +353,7 @@ const videos = [
 
 {
   id: "trailer-01",
-  title: "Sathya Sothanaida Sathya - Series Trailer - S.M. Sabarinath",
+  title: "Sathya Sothanaida Sathya - Trailer - S.M. Sabarinath",
   youtubeId: "Z-xSVwfc2oE",
   category: "Trailers",
   genre: "Emotional Action Thriller",
@@ -373,7 +373,7 @@ const videos = [
 },
 {
   id: "trailer-03",
-  title: "Suzhal - The Spin of Time - Short Film Promo Clip - SRV Media",
+  title: "Suzhal - The Spin of Time - SRV Media",
   youtubeId: "l6x9ccssmvc",
   category: "Trailers",
   genre: "Action Thriller",
@@ -383,7 +383,7 @@ const videos = [
 },
 {
   id: "trailer-04",
-  title: "SRV Short Film Competation - Trailer - S.S. Manikandan - SRV Media",
+  title: "SRV Short Film Competation - Trailer - S.S. Manikandan",
   youtubeId: "IINTnl9EPtY",
   category: "Trailers",
   genre: "Action Thriller",
@@ -394,7 +394,7 @@ const videos = [
 
 {
   id: "trailer-05",
-  title: "En Chellakutty Song - Making Video - Album Song - S.S. Manikandan",
+  title: "En Chellakutty Song - Making Video - S.S. Manikandan",
   youtubeId: "qk-xhQ2wgHM",
   category: "Trailers",
   genre: "Action Thriller",
@@ -404,7 +404,7 @@ const videos = [
 },
 {
   id: "trailer-06",
-  title: "Matin Spirit | Making Video | SRV Media",
+  title: "Matin Spirit - Making Video - SRV Media",
   youtubeId: "lOmgZ-Ojzw0",
   category: "Trailers",
   genre: "Action Thriller",
@@ -414,7 +414,7 @@ const videos = [
 },
 {
   id: "trailer-07",
-  title: "SooriMannan ( Sourashtra ) | Trailer | S.S. Manikandan",
+  title: "SooriMannan ( Sourashtra ) - Trailer - S.S. Manikandan",
   youtubeId: "3Lowb5hhXZM",
   category: "Trailers",
   genre: "Action Thriller",
@@ -430,7 +430,7 @@ const videos = [
 
 {
   id: "competition-01",
-  title: "Satru - ShortFilm (1) - SRV Media ShortFilms Competition",
+  title: "Satru - SRV Media ShortFilms",
   youtubeId: "ILcBL4fkB1I",
   category: "Short Films",
   genre: "Thriller",
@@ -440,7 +440,7 @@ const videos = [
 },
 {
   id: "competition-02",
-  title: "Korapathai  - ShortFilm (2) - SRV Media ShortFilms Competition",
+  title: "Korapathai - SRV Media ShortFilms",
   youtubeId: "XSPLfpDfmBs",
   category: "Short Films",
   genre: "Thriller",
@@ -450,7 +450,7 @@ const videos = [
 },
 {
   id: "competition-03",
-  title: "Murder - ShortFilm (3) - SRV Media ShortFilms Competition",
+  title: "Murder - SRV Media ShortFilms",
   youtubeId: "HuvzYQcb9hY",
   category: "Short Films",
   genre: "Thriller",
@@ -460,7 +460,7 @@ const videos = [
 },
 {
   id: "competition-04",
-  title: "Sirius - ShortFilm (4) - SRV Media ShortFilms Competition",
+  title: "Sirius - SRV Media ShortFilms",
   youtubeId: "nRhIsXxDcKY",
   category: "Short Films",
   genre: "Thriller",
@@ -470,7 +470,7 @@ const videos = [
 },
 {
   id: "competition-05",
-  title: "Ketten Kadhalai - ShortFilm (5) - SRV Media ShortFilms Competition",
+  title: "Ketten Kadhalai - SRV Media ShortFilms",
   youtubeId: "klWdsvtZYIo",
   category: "Short Films",
   genre: "Thriller",
@@ -480,7 +480,7 @@ const videos = [
 },
 {
   id: "competition-06",
-  title: "Vithu - ShortFilm (6) - SRV Media ShortFilms Competition",
+  title: "Vithu - SRV Media ShortFilms",
   youtubeId: "Rj2J_xduNks",
   category: "Short Films",
   genre: "Thriller",
@@ -490,7 +490,7 @@ const videos = [
 },
 {
   id: "competition-07",
-  title: "Karmegam(18+) - ShortFilm (7) - SRV Media ShortFilms Competition",
+  title: "Karmegam(18+) - SRV Media ShortFilms",
   youtubeId: "kjv-Dv_UONs",
   category: "Short Films",
   genre: "Thriller",
@@ -500,7 +500,7 @@ const videos = [
 },
 {
   id: "competition-08",
-  title: "Unakena Naan Irupen - ShortFilm (8) - SRV Media ShortFilms Competition",
+  title: "Unakena Naan Irupen - SRV Media ShortFilms",
   youtubeId: "aj2ZuoYIWpA",
   category: "Short Films",
   genre: "Thriller",

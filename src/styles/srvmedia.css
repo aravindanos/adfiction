@@ -1,0 +1,789 @@
+/* =====================================================
+   SRV MEDIA SECTION
+===================================================== */
+
+.srv-media-section {
+  position: relative;
+  min-height: 750px;
+  overflow: hidden;
+  background: #030303;
+  padding: 120px 8%;
+  isolation: isolate;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.srv-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  opacity: 0.035;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.5) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.5) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 40%,
+    black 60%,
+    transparent
+  );
+}
+
+
+.srv-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+}
+
+.srv-glow-one {
+  width: 500px;
+  height: 500px;
+  right: -150px;
+  top: 0;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.srv-glow-two {
+  width: 350px;
+  height: 350px;
+  left: 15%;
+  bottom: -200px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.srv-container {
+  position: relative;
+  z-index: 5;
+
+  max-width: 1500px;
+  margin: auto;
+
+  min-height: 500px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.srv-content {
+  position: relative;
+  z-index: 5;
+}
+
+
+.srv-overline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #888;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.srv-overline span {
+  width: 30px;
+  height: 1px;
+  background: #777;
+}
+
+
+.srv-content h2 {
+  margin: 25px 0 20px;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: clamp(55px, 6vw, 100px);
+  font-weight: 700;
+
+  letter-spacing: -5px;
+  line-height: 0.9;
+
+  color: #fff;
+}
+
+.srv-content h2 em {
+  font-style: normal;
+  font-weight: 300;
+  color: #888;
+}
+
+
+.srv-title-line {
+  width: 70px;
+  height: 2px;
+  background: #fff;
+  margin-bottom: 28px;
+}
+
+
+.srv-description {
+  max-width: 560px;
+
+  color: #888;
+  font-size: 15px;
+  line-height: 1.9;
+
+  margin: 0;
+}
+
+
+/* =====================================================
+   CHANNEL INFO
+===================================================== */
+
+.srv-mini-info {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 40px;
+}
+
+
+.srv-info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.srv-info-item svg {
+  font-size: 22px;
+  color: #aaa;
+}
+
+.srv-info-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.srv-info-item span {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #666;
+}
+
+.srv-info-item strong {
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #ddd;
+}
+
+
+.srv-info-divider {
+  width: 1px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.srv-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  margin-top: 40px;
+}
+
+.srv-watch-btn,
+.srv-explore-btn {
+  min-height: 52px;
+  padding: 0 24px;
+
+  border: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+.srv-watch-btn {
+  background: #fff;
+  color: #000;
+}
+
+.srv-watch-btn:hover {
+  transform: translateY(-5px);
+  background: #ddd;
+}
+
+
+.srv-explore-btn {
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.srv-explore-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-5px);
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.srv-navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  margin-top: 55px;
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.srv-nav-label {
+  color: #555;
+
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+.srv-nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.srv-nav-links button {
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #999;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+
+.srv-nav-links button:hover {
+  color: #fff;
+}
+
+
+/* =====================================================
+   VISUAL
+===================================================== */
+
+.srv-visual {
+  position: relative;
+
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  perspective: 1600px;
+}
+
+
+/* =====================================================
+   ORBITS
+===================================================== */
+
+.srv-orbit {
+  position: absolute;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.srv-orbit-one {
+  width: 520px;
+  height: 520px;
+
+  transform:
+    rotateX(65deg)
+    rotateZ(20deg);
+}
+
+.srv-orbit-two {
+  width: 380px;
+  height: 380px;
+
+  transform:
+    rotateY(65deg)
+    rotateZ(-20deg);
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.srv-video-wrapper {
+  position: relative;
+
+  width: min(100%, 560px);
+
+  transform:
+    rotateY(-10deg)
+    rotateX(4deg)
+    rotateZ(2deg);
+
+  transform-style: preserve-3d;
+
+  animation: srvVideoFloat 7s ease-in-out infinite alternate;
+}
+
+@keyframes srvVideoFloat {
+  from {
+    transform:
+      translateY(0)
+      rotateY(-10deg)
+      rotateX(4deg)
+      rotateZ(2deg);
+  }
+
+  to {
+    transform:
+      translateY(-12px)
+      rotateY(-6deg)
+      rotateX(2deg)
+      rotateZ(1deg);
+  }
+}
+
+
+.srv-video-shadow {
+  position: absolute;
+
+  inset: 30px -30px -35px 30px;
+
+  background: #000;
+  filter: blur(30px);
+
+  opacity: 0.8;
+
+  transform: translateZ(-50px);
+}
+
+
+.srv-video-frame {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #080808;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 50px 100px rgba(0, 0, 0, 0.8);
+}
+
+
+.srv-intro-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transform: scale(1.02);
+}
+
+
+.srv-video-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.45),
+      transparent 35%,
+      transparent 60%,
+      rgba(0, 0, 0, 0.85)
+    );
+}
+
+
+/* =====================================================
+   VIDEO DETAILS
+===================================================== */
+
+.srv-video-top {
+  position: absolute;
+
+  top: 18px;
+  left: 20px;
+  right: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #aaa;
+
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.srv-video-top span:last-child {
+  margin-left: auto;
+}
+
+
+.srv-live-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow: 0 0 10px rgba(255,255,255,0.7);
+
+  animation: srvPulse 2s infinite;
+}
+
+@keyframes srvPulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+
+.srv-video-bottom {
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.srv-video-bottom small {
+  display: block;
+
+  color: #999;
+
+  font-size: 8px;
+  letter-spacing: 3px;
+
+  margin-bottom: 6px;
+}
+
+.srv-video-bottom strong {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+
+.srv-video-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255,255,255,0.4);
+
+  background: rgba(0,0,0,0.3);
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* =====================================================
+   FLOATING CARD
+===================================================== */
+
+.srv-floating-card {
+  position: absolute;
+
+  right: -40px;
+  bottom: -30px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 15px 20px;
+
+  background: rgba(15, 15, 15, 0.85);
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.6);
+
+  transform:
+    translateZ(80px)
+    rotateY(8deg);
+}
+
+.srv-floating-card svg {
+  font-size: 22px;
+  color: #aaa;
+}
+
+.srv-floating-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.srv-floating-card span {
+  font-size: 7px;
+  letter-spacing: 2px;
+  color: #777;
+}
+
+.srv-floating-card strong {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1024px) {
+  .srv-media-section {
+    padding: 100px 6%;
+  }
+
+  .srv-container {
+    gap: 40px;
+  }
+
+  .srv-video-wrapper {
+    width: 100%;
+  }
+
+  .srv-floating-card {
+    right: -10px;
+  }
+
+  .srv-content h2 {
+    font-size: 70px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .srv-media-section {
+    padding: 80px 5%;
+  }
+
+  .srv-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .srv-content {
+    order: 1;
+  }
+
+  .srv-visual {
+    order: 2;
+    min-height: 400px;
+  }
+
+  .srv-content h2 {
+    font-size: clamp(50px, 14vw, 75px);
+  }
+
+  .srv-description {
+    font-size: 13px;
+  }
+
+  .srv-mini-info {
+    gap: 18px;
+  }
+
+  .srv-video-wrapper {
+    width: 90%;
+
+    transform:
+      rotateY(-5deg)
+      rotateX(2deg);
+  }
+
+  .srv-floating-card {
+    right: -15px;
+    bottom: -25px;
+  }
+
+  .srv-navigation {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .srv-media-section {
+    padding: 70px 5%;
+  }
+
+  .srv-overline {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .srv-content h2 {
+    margin-top: 20px;
+    font-size: 52px;
+    letter-spacing: -3px;
+  }
+
+  .srv-description {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .srv-mini-info {
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .srv-info-divider {
+    height: 30px;
+  }
+
+  .srv-info-item svg {
+    font-size: 18px;
+  }
+
+  .srv-info-item strong {
+    font-size: 9px;
+  }
+
+  .srv-buttons {
+    margin-top: 30px;
+    gap: 10px;
+  }
+
+  .srv-watch-btn,
+  .srv-explore-btn {
+    min-height: 46px;
+    padding: 0 16px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .srv-visual {
+    min-height: 280px;
+  }
+
+  .srv-video-wrapper {
+    width: 95%;
+    animation: none;
+  }
+
+  .srv-video-top,
+  .srv-video-bottom {
+    display: none;
+  }
+
+  .srv-floating-card {
+    padding: 12px 14px;
+    right: -5px;
+    bottom: -20px;
+  }
+
+  .srv-orbit-one {
+    width: 350px;
+    height: 350px;
+  }
+
+  .srv-orbit-two {
+    width: 250px;
+    height: 250px;
+  }
+
+  .srv-nav-links {
+    gap: 16px;
+  }
+}

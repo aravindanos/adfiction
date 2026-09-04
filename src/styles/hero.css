@@ -813,88 +813,207 @@
 }
 
 
+
+
+.watch-button,
+.explore-button {
+  text-decoration: none;
+  cursor: pointer;
+}
 /* =====================================================
-   TABLET
+   RESPONSIVE - LARGE LAPTOP / SMALL DESKTOP
 ===================================================== */
 
-@media (max-width: 1100px) {
-
+@media (max-width: 1200px) {
   .hero-content {
-    width: 52%;
+    width: 50%;
+    margin-left: 7%;
   }
 
   .hero-video-wrapper {
-    right: 3%;
-
     width: 42vw;
+    right: 6%;
   }
 
   .hero h1 {
-    font-size: clamp(55px, 7vw, 90px);
+    font-size: clamp(60px, 7vw, 100px);
   }
 
+  .hero-side-text {
+    right: 2%;
+  }
 }
 
 
 /* =====================================================
-   MOBILE
+   TABLET LANDSCAPE
 ===================================================== */
 
-@media (max-width: 768px) {
-
+@media (max-width: 1024px) {
   .hero {
     min-height: 100svh;
-
-    align-items: flex-start;
-
-    padding-top: 80px;
   }
 
   .hero-content {
-    width: 90%;
-
-    margin-left: 5%;
-
-    padding-top: 20px;
-
-    z-index: 12;
+    width: 52%;
+    margin-left: 6%;
   }
 
   .hero h1 {
-    font-size: clamp(50px, 15vw, 85px);
+    font-size: clamp(52px, 7vw, 80px);
+    letter-spacing: -4px;
+  }
 
-    letter-spacing: -3px;
+  .hero-description {
+    max-width: 420px;
+  }
+
+  .hero-video-wrapper {
+    width: 43vw;
+    right: 4%;
+  }
+
+  .hero-orbit {
+    opacity: 0.7;
+  }
+
+  .orbit-one {
+    width: 450px;
+    height: 450px;
+  }
+
+  .orbit-two {
+    width: 350px;
+    height: 350px;
+  }
+
+  .orbit-three {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-side-text {
+    display: none;
+  }
+}
+
+
+/* =====================================================
+   TABLET PORTRAIT
+===================================================== */
+
+@media (max-width: 900px) {
+  .hero-content {
+    width: 55%;
+    margin-left: 5%;
+  }
+
+  .hero h1 {
+    font-size: clamp(50px, 7vw, 72px);
+    line-height: 0.9;
   }
 
   .hero-description {
     font-size: 13px;
+    line-height: 1.7;
+  }
 
-    max-width: 90%;
+  .hero-video-wrapper {
+    width: 40vw;
+    right: 3%;
+  }
+
+  .video-top {
+    top: 12px;
+    left: 14px;
+    right: 14px;
+  }
+
+  .video-bottom {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .hero-overline {
+    letter-spacing: 4px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE + TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+    height: auto;
+    align-items: flex-start;
+    padding-top: 90px;
+  }
+
+  .hero-content {
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 20px;
+    z-index: 12;
+  }
+
+  .hero-overline {
+    margin-bottom: 20px;
+    font-size: 9px;
+    letter-spacing: 4px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 13vw, 80px);
+    line-height: 0.9;
+    letter-spacing: -3px;
+  }
+
+  .hero-description {
+    max-width: 520px;
+    margin-top: 25px;
+    font-size: 13px;
+    line-height: 1.7;
   }
 
   .hero-buttons {
+    margin-top: 28px;
     flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .watch-button,
+  .explore-button {
+    min-height: 46px;
+    padding: 0 22px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
   }
 
   .hero-video-wrapper {
     position: absolute;
-
     top: auto;
-    bottom: 90px;
-
+    bottom: 100px;
     right: 5%;
 
-    width: 70%;
+    width: 68%;
 
     transform:
       perspective(1000px)
       rotateY(-8deg)
-      rotateZ(2deg)
-      translateZ(40px);
+      rotateX(2deg)
+      rotateZ(2deg);
 
-    opacity: 0.45;
-
+    opacity: 0.35;
     z-index: 3;
+  }
+
+  .hero-video-wrapper,
+  .hero-content {
+    animation: none;
   }
 
   .hero-side-text {
@@ -903,24 +1022,99 @@
 
   .hero-scroll {
     left: 5%;
-
     bottom: 25px;
   }
 
   .hero-number {
     right: 5%;
-
     bottom: 25px;
   }
 
   .hero-grid {
-    opacity: 0.05;
+    opacity: 0.04;
   }
 
-  .hero-orbit {
-    opacity: 0.4;
+  .hero-glow {
+    filter: blur(70px);
   }
 
+  .glow-one {
+    width: 280px;
+    height: 280px;
+    right: -10%;
+  }
+
+  .glow-two {
+    width: 200px;
+    height: 200px;
+  }
+
+  .orbit-one {
+    width: 400px;
+    height: 400px;
+    right: -180px;
+  }
+
+  .orbit-two {
+    width: 300px;
+    height: 300px;
+    right: -120px;
+  }
+
+  .orbit-three {
+    display: none;
+  }
+}
+
+
+/* =====================================================
+   LARGE MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 75px;
+  }
+
+  .hero-content {
+    width: 90%;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 14vw, 68px);
+  }
+
+  .hero-description {
+    max-width: 100%;
+    font-size: 12px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .watch-button,
+  .explore-button {
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 9px;
+  }
+
+  .hero-video-wrapper {
+    width: 78%;
+    bottom: 95px;
+    opacity: 0.28;
+  }
+
+  .video-top,
+  .video-bottom {
+    display: none;
+  }
+
+  .video-play {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 
@@ -929,34 +1123,196 @@
 ===================================================== */
 
 @media (max-width: 480px) {
+  .hero {
+    min-height: 100svh;
+    padding-top: 70px;
+  }
 
+  .hero-content {
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 10px;
+  }
+
+  .hero-overline {
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .hero-overline span {
+    width: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 15vw, 60px);
+    letter-spacing: -2.5px;
+    line-height: 0.9;
+  }
+
+  .hero-description {
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .hero-buttons {
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  .watch-button,
+  .explore-button {
+    min-height: 43px;
+    padding: 0 16px;
+    font-size: 8px;
+    letter-spacing: 1px;
+    gap: 7px;
+  }
+
+  .hero-video-wrapper {
+    width: 85%;
+    right: 2%;
+    bottom: 100px;
+    opacity: 0.22;
+  }
+
+  .hero-scroll {
+    bottom: 20px;
+    gap: 8px;
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+
+  .scroll-line {
+    width: 25px;
+  }
+
+  .hero-number {
+    bottom: 20px;
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .hero-grid {
+    background-size: 50px 50px;
+  }
+
+  .glow-one {
+    width: 220px;
+    height: 220px;
+  }
+
+  .glow-two {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+
+/* =====================================================
+   EXTRA SMALL DEVICES (320px - 375px)
+===================================================== */
+
+@media (max-width: 375px) {
   .hero {
     padding-top: 65px;
   }
 
   .hero h1 {
-    font-size: 54px;
+    font-size: 44px;
   }
 
   .hero-description {
-    margin-top: 25px;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .watch-button,
+  .explore-button {
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-video-wrapper {
-    width: 78%;
-
-    bottom: 80px;
+    width: 90%;
+    bottom: 115px;
   }
 
-  .hero-scroll span {
+  .hero-scroll {
+    font-size: 6px;
+  }
+
+  .hero-number {
     font-size: 7px;
   }
-
 }
 
 
-.watch-button,
-.explore-button {
-  text-decoration: none;
-  cursor: pointer;
+/* =====================================================
+   LANDSCAPE MOBILE
+===================================================== */
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh;
+    padding-top: 60px;
+  }
+
+  .hero-content {
+    width: 48%;
+    margin-left: 7%;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 7vw, 70px);
+  }
+
+  .hero-description {
+    margin-top: 18px;
+    font-size: 11px;
+  }
+
+  .hero-buttons {
+    margin-top: 18px;
+  }
+
+  .hero-video-wrapper {
+    width: 38vw;
+    right: 8%;
+    bottom: auto;
+    top: 50%;
+    opacity: 0.5;
+
+    transform:
+      translateY(-50%)
+      perspective(1000px)
+      rotateY(-8deg);
+  }
+
+  .hero-scroll,
+  .hero-number {
+    bottom: 15px;
+  }
+}
+
+
+/* =====================================================
+   REDUCE ANIMATION FOR PERFORMANCE
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

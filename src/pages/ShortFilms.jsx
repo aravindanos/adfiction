@@ -30,7 +30,7 @@ function ShortFilms() {
         );
 
   return (
-    <div className="category-page">
+    <div className="category-page" id="short-films">
 
       <Navbar />
 
