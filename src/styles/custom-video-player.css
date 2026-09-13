@@ -1,0 +1,679 @@
+/* =====================================================
+   ADFICTION CUSTOM VIDEO PLAYER
+===================================================== */
+
+.custom-video-player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  background: #000;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.8),
+    0 0 80px rgba(255, 255, 255, 0.04);
+
+  user-select: none;
+}
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.custom-video-screen {
+  position: absolute;
+  inset: 0;
+
+  background: #000;
+}
+
+.custom-video-screen iframe {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+
+  background: #000;
+}
+
+/* =====================================================
+   CINEMATIC OVERLAY
+===================================================== */
+
+.cinematic-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.55),
+      transparent 22%,
+      transparent 65%,
+      rgba(0, 0, 0, 0.9)
+    );
+}
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.player-brand {
+  position: absolute;
+
+  top: 24px;
+  left: 28px;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  pointer-events: none;
+}
+
+.player-brand span {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  letter-spacing: 4px;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.player-brand small {
+  padding: 5px 8px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 4px;
+
+  font-size: 7px;
+
+  letter-spacing: 1.5px;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.video-loading {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 10;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  background: #000;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.loading-spinner {
+  width: 35px;
+  height: 35px;
+
+  border: 2px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-top-color: #fff;
+
+  border-radius: 50%;
+
+  animation:
+    playerSpin 0.8s linear infinite;
+}
+
+@keyframes playerSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================================
+   CENTER PLAY
+===================================================== */
+
+.center-play-button {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 6;
+
+  width: 82px;
+  height: 82px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.4);
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(15px);
+
+  color: #fff;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+.center-play-button svg {
+  width: 28px;
+  height: 28px;
+
+  margin-left: 4px;
+}
+
+.center-play-button:hover {
+  transform:
+    translate(-50%, -50%)
+    scale(1.1);
+
+  background:
+    rgba(255, 255, 255, 0.2);
+
+  border-color:
+    rgba(255, 255, 255, 0.7);
+}
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+
+.custom-player-controls {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 7;
+
+  padding: 0 24px 20px;
+
+  opacity: 0;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+
+  pointer-events: none;
+}
+
+.custom-player-controls.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  pointer-events: auto;
+}
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.custom-progress {
+  position: relative;
+
+  width: 100%;
+
+  height: 4px;
+
+  margin-bottom: 15px;
+
+  background:
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: height 0.2s ease;
+}
+
+.custom-progress:hover {
+  height: 6px;
+}
+
+.custom-progress-buffer {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #fff;
+}
+
+.custom-progress-dot {
+  position: absolute;
+
+  top: 50%;
+
+  width: 12px;
+  height: 12px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
+}
+
+.custom-progress:hover
+  .custom-progress-dot {
+  opacity: 1;
+}
+
+/* =====================================================
+   BOTTOM CONTROLS
+===================================================== */
+
+.controls-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.controls-left,
+.controls-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.control-button {
+  position: relative;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.control-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.control-button:hover {
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  color: #fff;
+
+  transform: scale(1.08);
+}
+
+/* =====================================================
+   SKIP BUTTON
+===================================================== */
+
+.skip-number {
+  position: absolute;
+
+  font-size: 6px;
+
+  font-weight: 700;
+
+  bottom: 8px;
+  right: 7px;
+
+  opacity: 0.9;
+}
+
+/* =====================================================
+   VOLUME
+===================================================== */
+
+.volume-control {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+.volume-slider {
+  width: 70px;
+
+  height: 3px;
+
+  appearance: none;
+
+  background:
+    rgba(255, 255, 255, 0.3);
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  cursor: pointer;
+}
+
+/* =====================================================
+   TIME
+===================================================== */
+
+.video-time {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-left: 8px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 11px;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.video-time i {
+  color:
+    rgba(255, 255, 255, 0.3);
+
+  font-style: normal;
+}
+
+/* =====================================================
+   SETTINGS
+===================================================== */
+
+.settings-wrapper {
+  position: relative;
+}
+
+.settings-menu {
+  position: absolute;
+
+  right: 0;
+  bottom: 48px;
+
+  width: 190px;
+
+  padding: 10px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-radius: 12px;
+
+  background:
+    rgba(12, 12, 12, 0.95);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.settings-title {
+  padding: 8px 10px;
+
+  color:
+    rgba(255, 255, 255, 0.35);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.settings-menu button {
+  display: block;
+
+  width: 100%;
+
+  padding: 10px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color:
+    rgba(255, 255, 255, 0.75);
+
+  text-align: left;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.settings-menu button:hover {
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: #fff;
+}
+
+/* =====================================================
+   FULLSCREEN
+===================================================== */
+
+.custom-video-player:fullscreen {
+  width: 100vw;
+  height: 100vh;
+
+  aspect-ratio: auto;
+
+  border-radius: 0;
+}
+
+.custom-video-player:fullscreen
+  .custom-video-screen {
+  position: fixed;
+
+  inset: 0;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+  .custom-video-player {
+    border-radius: 11px;
+  }
+
+  .player-brand {
+    top: 15px;
+    left: 16px;
+  }
+
+  .player-brand span {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .player-brand small {
+    display: none;
+  }
+
+  .custom-player-controls {
+    padding:
+      0 12px 12px;
+  }
+
+  .controls-left,
+  .controls-right {
+    gap: 2px;
+  }
+
+  .control-button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .control-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .volume-slider {
+    display: none;
+  }
+
+  .video-time {
+    font-size: 9px;
+
+    margin-left: 2px;
+
+    gap: 4px;
+  }
+
+  .center-play-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .center-play-button svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .custom-progress {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 430px) {
+  .custom-player-controls {
+    padding:
+      0 8px 8px;
+  }
+
+  .control-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .controls-left,
+  .controls-right {
+    gap: 0;
+  }
+
+  .video-time {
+    display: none;
+  }
+
+  .skip-number {
+    font-size: 5px;
+  }
+}

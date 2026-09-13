@@ -13,7 +13,7 @@ import {
 
 import Navbar from "../components/Navbar";
 import VideoCard from "../components/VideoCard";
-
+import CustomVideoPlayer from "../components/CustomVideoPlayer";
 import videos from "../data/videos";
 import "../styles/watch.css";
 
@@ -231,25 +231,16 @@ useEffect(() => {
         {/* PLAYER */}
        {/* PLAYER */}
 <section className="watch-player-section">
+
   <div className="watch-player-frame">
-    <iframe
-      src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
-      title={video.title}
-      allow="
-        autoplay;
-        accelerometer;
-        clipboard-write;
-        encrypted-media;
-        gyroscope;
-        picture-in-picture;
-        web-share
-      "
-      allowFullScreen
-    />
+
+    <CustomVideoPlayer video={video} />
 
     <div className="watch-player-border"></div>
     <div className="watch-player-glow"></div>
+
   </div>
+
 </section>
 
         {/* VIDEO INFO */}
