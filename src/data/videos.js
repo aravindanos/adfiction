@@ -6,7 +6,7 @@ const videos = [
 {
   id: "album-01",
   title: "Kanave Kanave - கனவே கனவே",
-  youtubeId: "GlhXcwWU1hY",
+  youtubeId: "lzS92g9WIh0",
   category: "Album Songs",
   genre: "Music",
   year: "2026",
